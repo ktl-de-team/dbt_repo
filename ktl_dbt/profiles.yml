@@ -1,0 +1,21 @@
+ktl_dbt:
+  target: dev
+  outputs:
+    test:
+      type: spark
+      method: session
+      schema: integration_demo
+      host: NA
+      server_side_parameters: {}
+        # "spark.sql.storeAssignmentPolicy": "legacy"
+
+    dev:
+      type: spark
+      method: session
+      schema: integration_demo
+      host: NA
+      server_side_parameters:
+        # "spark.sql.storeAssignmentPolicy": "legacy"
+        "spark.sql.defaultCatalog": "spark_catalog"
+        "spark.dynamicAllocation.enabled": "true"
+        "spark.driver.maxResultSize": "0"

@@ -1,0 +1,33 @@
+- name: CRM_CUS_ID
+  type: int
+  unique: True
+  min_value: 60000000
+  max_value: 90000000
+
+- name: CRM_CUS_NAME
+  type: name
+  unidecode: True
+  upper: True
+
+- name: CRM_CIF_NO
+  type: int
+  relationships:
+    to: corebank_customer
+    field: CUS_CUSTOMER_CODE
+  null_rate: 0.1
+
+- name: CRM_CUSTOMER_IDNO
+  type: string
+  regex_pattern: '0[0-9]{2}[0-9]{6}'
+  null_rate: 0.7
+  
+- name: CRM_CREATION_DATE
+  type: date
+  start_year: 2000
+  end_year: 2024
+  
+- name: BRN_CODE
+  type: string
+  relationships:
+    to: corebank_branch
+    field: BR_CD

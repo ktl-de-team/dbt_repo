@@ -1,0 +1,200 @@
+
+Table integration_dp.hub_customer {
+ dv_hkey_hub_customer string pk
+    cst_no double
+    dv_kaf_ldt timestamp
+    dv_kaf_ofs long
+    dv_cdc_ops string
+    dv_src_ldt timestamp
+    dv_src_rec string
+    dv_ldt timestamp
+}
+
+Table integration_dp.hub_branch  {
+    dv_hkey_hub_branch string pk
+    br_cd decimal(380)
+    dv_kaf_ldt timestamp
+    dv_kaf_ofs long
+    dv_cdc_ops string
+    dv_src_ldt timestamp
+    dv_src_rec string
+    dv_ldt timestamp
+    dv_ccd string
+}
+Table integration_dp.hub_account  {
+    dv_hkey_hub_account string pk
+    ln_ac_nbr string
+    dv_kaf_ldt timestamp
+    dv_kaf_ofs long
+    dv_cdc_ops string
+    dv_src_ldt timestamp
+    dv_src_rec string
+    dv_ldt timestamp
+    dv_ccd string
+}
+
+Table integration_dp.sat_customer {
+    dv_hkey_sat_customer string pk
+    dv_hkey_hub_customer string
+    dv_hsh_dif string
+    cst_nm string
+    cst_full_nm string
+    cst_type string
+    br_cd float
+    addr_pri string
+    address_line4 string
+    address_line3 string
+    create_dt string
+    record_stat string
+    sex string
+    id_number string
+    type_of_id string
+    date_of_issue string
+    place_of_issue string
+    phone string
+    birth_day string
+    income_levcd string
+    educ_levcd string
+    mail_typcd string
+    occptn_cd string
+    dv_kaf_ldt timestamp
+    dv_kaf_ofs long
+    dv_cdc_ops string
+    dv_src_ldt timestamp
+    dv_src_rec string
+    dv_ldt timestamp
+}
+
+Table integration_dp.sat_customer_corecard {
+    dv_hkey_sat_customer_corecard string pk
+    dv_hkey_hub_customer string
+    dv_hsh_dif string
+    card_no double
+    card_name string
+    card_full_name string
+    card_type string
+    acct_no double
+    addr_line1 string
+    addr_line2 string
+    dv_kaf_ldt timestamp
+    dv_kaf_ofs long
+    dv_cdc_ops string
+    dv_src_ldt timestamp
+    dv_src_rec string
+    dv_ldt timestamp
+}
+
+Table integration_dp.sat_customer_los {
+    dv_hkey_sat_customer_los string pk
+    dv_hkey_hub_customer string
+    dv_hsh_dif string
+    customer_name string
+    credit_no string
+    limit_value double
+    income_levcd string
+    occptn_cd string
+    dv_kaf_ldt timestamp
+    dv_kaf_ofs long
+    dv_cdc_ops string
+    dv_src_ldt timestamp
+    dv_src_rec string
+    dv_ldt timestamp
+}
+
+Table integration_dp.sat_branch {
+    dv_hkey_sat_branch string pk
+    dv_hkey_hub_branch string
+    dv_hsh_dif string
+    br_nm string
+    br_addr string
+    parent_br_cd float
+    parent_br_nm string
+    parent_br_cd_lv1 string
+    parent_br_nm_lv1 string
+    area_4_cd string
+    area_4_nm string
+    area_6_cd string
+    area_6_nm string
+    br_grp string
+    post_cd string
+    district_cd string
+    district_nm string
+    province_cd string
+    province_nm string
+    area_po string
+    area_nm_po string
+    cntry_cd string
+    br_open_dt string
+    dv_kaf_ldt timestamp
+    dv_kaf_ofs long
+    dv_cdc_ops string
+    dv_src_ldt timestamp
+    dv_src_rec string
+    dv_ldt timestamp
+    }
+Table integration_dp.sat_account {
+    dv_hkey_sat_account string pk
+    dv_hkey_hub_account string
+    dv_hsh_dif string
+    br_cd float
+    book_date string
+    value_date string
+    maturity_date string
+    cst_no float
+    amt_financed double
+    close_date string
+    account_status string
+    sub_cd string
+    ten_sp_ksp string
+    ccy_cd string
+    product_code string
+    dv_kaf_ldt timestamp
+    dv_kaf_ofs long
+    dv_cdc_ops string
+    dv_src_ldt timestamp
+    dv_src_rec string
+    dv_ldt timestamp
+    }
+
+Table integration_dp.lnk_customer_account {
+    dv_hkey_lnk_customer_account string pk
+    dv_hkey_hub_account string
+    dv_hkey_hub_customer string
+    dv_kaf_ldt timestamp
+    dv_kaf_ofs long
+    dv_cdc_ops string
+    dv_src_ldt timestamp
+    dv_src_rec string
+    dv_ldt timestamp
+}
+
+Table integration_dp.lsat_customer_account {
+    dv_hkey_lsat_customer_account string pk
+    dv_hkey_lnk_customer_account string
+    dv_hsh_dif string
+    book_date string
+    value_date string
+    maturity_date string
+    amt_financed double
+    close_date string
+    account_status string
+    sub_cd string
+    ten_sp_ksp string
+    ccy_cd string
+    product_code string
+    dv_kaf_ldt timestamp
+    dv_kaf_ofs long
+    dv_cdc_ops string
+    dv_src_ldt timestamp
+    dv_src_rec string
+    dv_ldt timestamp
+}
+
+Ref: integration_dp.hub_customer.dv_hkey_hub_customer < integration_dp.sat_customer.dv_hkey_hub_customer 
+Ref: integration_dp.hub_customer.dv_hkey_hub_customer < integration_dp.sat_customer_corecard.dv_hkey_hub_customer 
+Ref: integration_dp.hub_customer.dv_hkey_hub_customer < integration_dp.sat_customer_los.dv_hkey_hub_customer 
+Ref: integration_dp.hub_branch.dv_hkey_hub_branch < integration_dp.sat_branch.dv_hkey_hub_branch 
+Ref: integration_dp.hub_account.dv_hkey_hub_account < integration_dp.sat_account.dv_hkey_hub_account 
+Ref: integration_dp.hub_account.dv_hkey_hub_account < integration_dp.lnk_customer_account.dv_hkey_hub_account 
+Ref: integration_dp.hub_customer.dv_hkey_hub_customer < integration_dp.lnk_customer_account.dv_hkey_hub_customer 
+Ref: integration_dp.lnk_customer_account.dv_hkey_lnk_customer_account < integration_dp.lsat_customer_account.dv_hkey_lnk_customer_account  

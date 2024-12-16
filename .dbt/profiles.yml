@@ -1,0 +1,54 @@
+ktl_dbt:
+  target: dev
+  outputs:
+    test:
+      type: spark
+      method: session
+      schema: integration_dp_test
+      host: NA
+      server_side_parameters:
+        "spark.master ": "local[*]"
+        "spark.sql.defaultCatalog": "spark_catalog"
+    dev:
+      type: spark
+      method: session
+      schema: integration_dp
+      host: NA
+      server_side_parameters:
+        # only spark_catalog can create view 
+        "spark.sql.defaultCatalog": "spark_catalog"
+
+        "spark.dynamicAllocation.enabled": "true"
+        "spark.driver.maxResultSize": "0"
+        "spark.executor.cores": "1"
+        "spark.executor.memory": "1g"
+        "spark.executor.instances": "1"
+        "spark.dynamicAllocation.minExecutors": "1"
+        "spark.dynamicAllocation.maxExecutors": "2"
+
+elementary:
+  target: dev
+  outputs:
+    test:
+      type: spark
+      method: session
+      schema: elementary_test
+      host: NA
+      server_side_parameters:
+        "spark.master ": "local[*]"
+        "spark.sql.defaultCatalog": "spark_catalog"
+    dev:
+      type: spark
+      method: session
+      schema: elementary
+      host: NA
+      server_side_parameters:
+        "spark.sql.defaultCatalog": "spark_catalog"
+        
+        "spark.dynamicAllocation.enabled": "true"
+        "spark.driver.maxResultSize": "0"
+        "spark.executor.cores": "1"
+        "spark.executor.memory": "1g"
+        "spark.executor.instances": "1"
+        "spark.dynamicAllocation.minExecutors": "1"
+        "spark.dynamicAllocation.maxExecutors": "2"

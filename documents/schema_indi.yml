@@ -1,0 +1,1215 @@
+version: 2
+models:
+   - name: T24_CLEANSING
+     columns:
+      - name: dv_ldt
+      - name: cob_date
+      
+      - name: KDI01
+        description: '{{ doc("KDI01") }}'
+      - name: KDI55
+        description: '{{ doc("KDI55") }}'
+      - name: KDI02
+        description: '{{ doc("KDI02") }}'
+        tests:
+          - test_G1:
+              invalid_table_result : T24_INVALID
+          - test_G34:
+              invalid_table_result: T24_INVALID
+          - test_S132:
+              invalid_table_result: T24_INVALID
+              cus_code: KDI01
+      - name: KDI03
+        description: '{{ doc("KDI03") }}'
+      - name: KDI04
+        description: '{{ doc("KDI04") }}'
+      - name: KDI05
+        description: '{{ doc("KDI05") }}'
+        tests:
+          - test_CL1
+          - test_R43_gioitinh:
+              cus_code: KDI01
+              invalid_table_result: T24_INVALID
+          - test_G1:
+              invalid_table_result : T24_INVALID
+      - name: KDI06
+        description: '{{ doc("KDI06") }}'
+      - name: KDI07
+        description: '{{ doc("KDI07") }}'
+        tests:
+          - test_G1:
+              invalid_table_result : T24_INVALID
+          - test_S261:
+              invalid_table_result : T24_INVALID
+              cus_code: KDI01
+          - test_S31:
+              invalid_table_result : T24_INVALID
+              cus_code: KDI01
+          - test_S234:
+              invalid_table_result : T24_INVALID
+              cus_code: KDI01
+      - name: KDI08
+        description: '{{ doc("KDI08") }}'
+      - name: KDI09
+        description: '{{ doc("KDI09") }}'
+      - name: KDI10
+        description: '{{ doc("KDI10") }}'
+      - name: KDI10_01
+        description: '{{ doc("KDI10_01") }}'
+      - name: KDI10_02
+        description: '{{ doc("KDI10_02") }}'
+      - name: KDI10_03
+        description: '{{ doc("KDI10_03") }}'
+      - name: KDI10_04
+        description: '{{ doc("KDI10_04") }}'
+      - name: KDI10_05
+        description: '{{ doc("KDI10_05") }}'
+      - name: KDI10_06
+        description: '{{ doc("KDI10_06") }}'
+      - name: KDI11
+        description: '{{ doc("KDI11") }}'
+      - name: KDI11_01
+        description: '{{ doc("KDI11_01") }}'
+      - name: KDI11_02
+        description: '{{ doc("KDI11_02") }}'
+      - name: KDI11_03
+        description: '{{ doc("KDI11_03") }}'
+      - name: KDI11_04
+        description: '{{ doc("KDI11_04") }}'
+      - name: KDI11_05
+        description: '{{ doc("KDI11_05") }}'
+      - name: KDI11_06
+        description: '{{ doc("KDI11_06") }}'
+      - name: KDI12
+        description: '{{ doc("KDI12") }}'
+      - name: KDI12_01
+        description: '{{ doc("KDI12_01") }}'
+      - name: KDI12_02
+        description: '{{ doc("KDI12_02") }}'
+      - name: KDI12_03
+        description: '{{ doc("KDI12_03") }}'
+      - name: KDI12_04
+        description: '{{ doc("KDI12_04") }}'
+      - name: KDI12_05
+        description: '{{ doc("KDI12_05") }}'
+      - name: KDI12_06
+        description: '{{ doc("KDI12_06") }}'
+      - name: KDI13
+        description: '{{ doc("KDI13") }}'
+      - name: KDI13_01
+        description: '{{ doc("KDI13_01") }}'
+      - name: KDI13_02
+        description: '{{ doc("KDI13_02") }}'
+      - name: KDI13_03
+        description: '{{ doc("KDI13_03") }}'
+      - name: KDI13_04
+        description: '{{ doc("KDI13_04") }}'
+      - name: KDI13_05
+        description: '{{ doc("KDI13_05") }}'
+      - name: KDI13_06
+        description: '{{ doc("KDI13_06") }}'
+      - name: KDI14
+        description: '{{ doc("KDI14") }}'
+      - name: KDI14_01
+        description: '{{ doc("KDI14_01") }}'
+      - name: KDI14_02
+        description: '{{ doc("KDI14_02") }}'
+        tests:
+          - test_G34:
+              invalid_table_result: T24_INVALID
+          - test_S134:
+              invalid_table_result: T24_INVALID
+              cus_code: KDI01
+      - name: KDI14_03
+        description: '{{ doc("KDI14_03") }}'
+      - name: KDI14_04
+        description: '{{ doc("KDI14_04") }}'
+      - name: KDI14_05
+        description: '{{ doc("KDI14_05") }}'
+        tests:
+          - test_G1:
+              invalid_table_result : T24_INVALID
+          - test_G36:
+              invalid_table_result: T24_INVALID
+          - test_S123:
+              invalid_table_result: T24_INVALID
+              cus_code: KDI01
+      - name: KDI14_06
+        description: '{{ doc("KDI14_06") }}'
+      - name: KDI15
+        description: '{{ doc("KDI15") }}'
+        tests:
+          - test_R51:
+              invalid_table_result : T24_INVALID
+      - name: KDI16
+        description: '{{ doc("KDI16") }}'
+      - name: KDI17
+        description: '{{ doc("KDI17") }}'
+        tests:
+          - test_CL1
+          - test_CL2:
+              cus_code: KDI01
+          - test_S124:
+              invalid_table_result: T24_INVALID
+              cus_code: KDI01
+          - test_S224:
+              invalid_table_result: T24_INVALID
+              cus_code: KDI01
+      - name: KDI18
+        description: '{{ doc("KDI18") }}'
+      - name: KDI19
+        description: '{{ doc("KDI19") }}'
+        tests:
+          - test_R57:
+              invalid_table_result: T24_INVALID
+              cus_code: KDI01
+          - test_S229:
+              invalid_table_result: T24_INVALID
+              cus_code: KDI01
+          - test_S36:
+              invalid_table_result: T24_INVALID
+              cus_code: KDI01
+      - name: KDI20
+        description: '{{ doc("KDI20") }}'
+      - name: KDI21_01
+        description: '{{ doc("KDI21_01") }}'
+      - name: KDI57_01
+        description: '{{ doc("KDI57_01") }}'
+      - name: KDI21_02
+        description: '{{ doc("KDI21_02") }}'
+        tests:
+          - test_CL5
+          - test_S261:
+              invalid_table_result : T24_INVALID
+              cus_code : KDI01
+          - test_S267:
+              invalid_table_result : T24_INVALID
+              id_column: KDI21_01
+              cus_code : KDI01
+          - test_S35:
+              invalid_table_result : T24_INVALID
+              id_column: KDI21_01
+              cus_code : KDI01
+      - name: KDI57_02
+        description: '{{ doc("KDI57_02") }}'
+      - name: KDI21_03
+        description: '{{ doc("KDI21_03") }}'
+      - name: KDI57_03
+        description: '{{ doc("KDI57_03") }}'
+      - name: KDI22_01
+        description: '{{ doc("KDI22_01") }}'
+        tests:
+          - test_V8:
+              invalid_table_result : T24_INVALID
+              dob : KDI07
+              cus_code: KDI01
+          - test_V9:
+              invalid_table_result : T24_INVALID
+              cus_code: KDI01
+          - test_V7:
+              invalid_table_result : T24_INVALID
+              cus_code: KDI01
+      - name: KDI22_02
+        description: '{{ doc("KDI22_02") }}'
+        tests:
+          - test_CL5
+          - test_S267:
+              invalid_table_result : T24_INVALID
+              id_column: KDI22_01
+              cus_code : KDI01
+          - test_S35:
+              invalid_table_result : T24_INVALID
+              id_column: KDI22_01
+              cus_code : KDI01
+          
+      - name: KDI58_02
+        description: '{{ doc("KDI58_02") }}'
+      - name: KDI22_03
+        description: '{{ doc("KDI22_03") }}'
+      - name: KDI58_03
+        description: '{{ doc("KDI58_03") }}'
+      - name: KDI23_01
+        description: '{{ doc("KDI23_01") }}'
+        tests:
+          - test_V6:
+              invalid_table_result : T24_INVALID
+              cus_code: KDI01
+      - name: KDI58_01
+        description: '{{ doc("KDI58_01") }}'
+      - name: KDI59_01
+        description: '{{ doc("KDI59_01") }}'
+      - name: KDI23_02
+        description: '{{ doc("KDI23_02") }}'
+        tests:
+          - test_CL5
+          - test_S267:
+              invalid_table_result : T24_INVALID
+              id_column: KDI23_01
+              cus_code : KDI01
+          - test_S35:
+              invalid_table_result : T24_INVALID
+              id_column: KDI23_01
+              cus_code : KDI01
+      - name: KDI59_02
+        description: '{{ doc("KDI59_02") }}'
+      - name: KDI23_03
+        description: '{{ doc("KDI23_03") }}'
+      - name: KDI59_03
+        description: '{{ doc("KDI59_03") }}'
+      - name: KDI23_04
+        description: '{{ doc("KDI23_04") }}'
+      - name: KDI24_01
+        description: '{{ doc("KDI24_01") }}'
+      - name: KDI24_02
+        description: '{{ doc("KDI24_02") }}'
+      - name: KDI24_03
+        description: '{{ doc("KDI24_03") }}'
+      - name: KDI25_01
+        description: '{{ doc("KDI25_01") }}'
+      - name: KDI25_02
+        description: '{{ doc("KDI25_02") }}'
+      - name: KDI25_03
+        description: '{{ doc("KDI25_03") }}'
+      - name: KDI26_01
+        description: '{{ doc("KDI26_01") }}'
+      - name: KDI26_02
+        description: '{{ doc("KDI26_02") }}'
+      - name: KDI26_03
+        description: '{{ doc("KDI26_03") }}'
+      - name: KDI27_01
+        description: '{{ doc("KDI27_01") }}'
+      - name: KDI27_02
+        description: '{{ doc("KDI27_02") }}'
+      - name: KDI27_03
+        description: '{{ doc("KDI27_03") }}'
+      - name: KDI28_01
+        description: '{{ doc("KDI28_01") }}'
+      - name: KDI28_02
+        description: '{{ doc("KDI28_02") }}'
+      - name: KDI28_03
+        description: '{{ doc("KDI28_03") }}'
+      - name: KDI29_01
+        description: '{{ doc("KDI29_01") }}'
+      - name: KDI29_02
+        description: '{{ doc("KDI29_02") }}'
+      - name: KDI29_03
+        description: '{{ doc("KDI29_03") }}'
+      - name: KDI30_01
+        description: '{{ doc("KDI30_01") }}'
+      - name: KDI30_02
+        description: '{{ doc("KDI30_02") }}'
+      - name: KDI30_03
+        description: '{{ doc("KDI30_03") }}'
+      - name: KDI30_04
+        description: '{{ doc("KDI30_04") }}'
+      - name: KDI31
+        description: '{{ doc("KDI31") }}'
+      - name: KDI32
+        description: '{{ doc("KDI32") }}'
+      - name: KDI33_01
+        description: '{{ doc("KDI33_01") }}'
+      - name: KDI33_02
+        description: '{{ doc("KDI33_02") }}'
+      - name: KDI33_03
+        description: '{{ doc("KDI33_03") }}'
+      - name: KDI33_04
+        description: '{{ doc("KDI33_04") }}'
+      - name: KDI34_01
+        description: '{{ doc("KDI34_01") }}'
+        tests:
+          - test_R43_nghenghiep:
+              cus_code: KDI01
+              invalid_table_result: T24_INVALID
+      - name: KDI34_02
+        description: '{{ doc("KDI34_02") }}'
+      - name: KDI34_03
+        description: '{{ doc("KDI34_03") }}'
+      - name: KDI34_04
+        description: '{{ doc("KDI34_04") }}'
+      - name: KDI34_05
+        description: '{{ doc("KDI34_05") }}'
+      - name: KDI35
+        description: '{{ doc("KDI35") }}'
+      - name: KDI36
+        description: '{{ doc("KDI36") }}'
+      - name: KDI37
+        description: '{{ doc("KDI37") }}'
+      - name: KDI38
+        description: '{{ doc("KDI38") }}'
+      - name: KDI39
+        description: '{{ doc("KDI39") }}'
+      - name: KDI40
+        description: '{{ doc("KDI40") }}'
+      - name: KDI41
+        description: '{{ doc("KDI41") }}'
+      - name: KDI42
+        description: '{{ doc("KDI42") }}'
+      - name: KDI43
+        description: '{{ doc("KDI43") }}'
+      - name: KDI44
+        description: '{{ doc("KDI44") }}'
+      - name: KDI45
+        description: '{{ doc("KDI45") }}'
+      - name: KDI46
+        description: '{{ doc("KDI46") }}'
+      - name: KDI47
+        description: '{{ doc("KDI47") }}'
+      - name: KDI48
+        description: '{{ doc("KDI48") }}'
+      - name: KDI49
+        description: '{{ doc("KDI49") }}'
+      - name: KDI50
+        description: '{{ doc("KDI50") }}'
+      - name: KDI51
+        description: '{{ doc("KDI51") }}'
+      - name: KDI52
+        description: '{{ doc("KDI52") }}'
+      - name: KDI53
+        description: '{{ doc("KDI53") }}'
+      - name: KDI54
+        description: '{{ doc("KDI54") }}'
+      - name: KDI01_CDT
+        description: '{{ doc("KDI01_CDT") }}'
+      - name: KDI55_CDT
+        description: '{{ doc("KDI55_CDT") }}'
+      - name: KDI02_CDT
+        description: '{{ doc("KDI02_CDT") }}'
+      - name: KDI03_CDT
+        description: '{{ doc("KDI03_CDT") }}'
+      - name: KDI04_CDT
+        description: '{{ doc("KDI04_CDT") }}'
+      - name: KDI05_CDT
+        description: '{{ doc("KDI05_CDT") }}'
+      - name: KDI06_CDT
+        description: '{{ doc("KDI06_CDT") }}'
+      - name: KDI07_CDT
+        description: '{{ doc("KDI07_CDT") }}'
+      - name: KDI08_CDT
+        description: '{{ doc("KDI08_CDT") }}'
+      - name: KDI09_CDT
+        description: '{{ doc("KDI09_CDT") }}'
+      - name: KDI10_CDT
+        description: '{{ doc("KDI10_CDT") }}'
+      - name: KDI10_01_CDT
+        description: '{{ doc("KDI10_01_CDT") }}'
+      - name: KDI10_02_CDT
+        description: '{{ doc("KDI10_02_CDT") }}'
+      - name: KDI10_03_CDT
+        description: '{{ doc("KDI10_03_CDT") }}'
+      - name: KDI10_04_CDT
+        description: '{{ doc("KDI10_04_CDT") }}'
+      - name: KDI10_05_CDT
+        description: '{{ doc("KDI10_05_CDT") }}'
+      - name: KDI10_06_CDT
+        description: '{{ doc("KDI10_06_CDT") }}'
+      - name: KDI11_CDT
+        description: '{{ doc("KDI11_CDT") }}'
+      - name: KDI11_01_CDT
+        description: '{{ doc("KDI11_01_CDT") }}'
+      - name: KDI11_02_CDT
+        description: '{{ doc("KDI11_02_CDT") }}'
+      - name: KDI11_03_CDT
+        description: '{{ doc("KDI11_03_CDT") }}'
+      - name: KDI11_04_CDT
+        description: '{{ doc("KDI11_04_CDT") }}'
+      - name: KDI11_05_CDT
+        description: '{{ doc("KDI11_05_CDT") }}'
+      - name: KDI11_06_CDT
+        description: '{{ doc("KDI11_06_CDT") }}'
+      - name: KDI12_CDT
+        description: '{{ doc("KDI12_CDT") }}'
+      - name: KDI12_01_CDT
+        description: '{{ doc("KDI12_01_CDT") }}'
+      - name: KDI12_02_CDT
+        description: '{{ doc("KDI12_02_CDT") }}'
+      - name: KDI12_03_CDT
+        description: '{{ doc("KDI12_03_CDT") }}'
+      - name: KDI12_04_CDT
+        description: '{{ doc("KDI12_04_CDT") }}'
+      - name: KDI12_05_CDT
+        description: '{{ doc("KDI12_05_CDT") }}'
+      - name: KDI12_06_CDT
+        description: '{{ doc("KDI12_06_CDT") }}'
+      - name: KDI13_CDT
+        description: '{{ doc("KDI13_CDT") }}'
+      - name: KDI13_01_CDT
+        description: '{{ doc("KDI13_01_CDT") }}'
+      - name: KDI13_02_CDT
+        description: '{{ doc("KDI13_02_CDT") }}'
+      - name: KDI13_03_CDT
+        description: '{{ doc("KDI13_03_CDT") }}'
+      - name: KDI13_04_CDT
+        description: '{{ doc("KDI13_04_CDT") }}'
+      - name: KDI13_05_CDT
+        description: '{{ doc("KDI13_05_CDT") }}'
+      - name: KDI13_06_CDT
+        description: '{{ doc("KDI13_06_CDT") }}'
+      - name: KDI14_CDT
+        description: '{{ doc("KDI14_CDT") }}'
+      - name: KDI14_01_CDT
+        description: '{{ doc("KDI14_01_CDT") }}'
+      - name: KDI14_02_CDT
+        description: '{{ doc("KDI14_02_CDT") }}'
+      - name: KDI14_03_CDT
+        description: '{{ doc("KDI14_03_CDT") }}'
+      - name: KDI14_04_CDT
+        description: '{{ doc("KDI14_04_CDT") }}'
+      - name: KDI14_05_CDT
+        description: '{{ doc("KDI14_05_CDT") }}'
+      - name: KDI14_06_CDT
+        description: '{{ doc("KDI14_06_CDT") }}'
+      - name: KDI15_CDT
+        description: '{{ doc("KDI15_CDT") }}'
+      - name: KDI16_CDT
+        description: '{{ doc("KDI16_CDT") }}'
+      - name: KDI17_CDT
+        description: '{{ doc("KDI17_CDT") }}'
+      - name: KDI18_CDT
+        description: '{{ doc("KDI18_CDT") }}'
+      - name: KDI19_CDT
+        description: '{{ doc("KDI19_CDT") }}'
+      - name: KDI56_CDT
+        description: '{{ doc("KDI56_CDT") }}'
+      - name: KDI20_CDT
+        description: '{{ doc("KDI20_CDT") }}'
+      - name: KDI21_01_CDT
+        description: '{{ doc("KDI21_01_CDT") }}'
+      - name: KDI57_01_CDT
+        description: '{{ doc("KDI57_01_CDT") }}'
+      - name: KDI21_02_CDT
+        description: '{{ doc("KDI21_02_CDT") }}'
+      - name: KDI57_02_CDT
+        description: '{{ doc("KDI57_02_CDT") }}'
+      - name: KDI21_03_CDT
+        description: '{{ doc("KDI21_03_CDT") }}'
+      - name: KDI57_03_CDT
+        description: '{{ doc("KDI57_03_CDT") }}'
+      - name: KDI22_01_CDT
+        description: '{{ doc("KDI22_01_CDT") }}'
+      - name: KDI58_01_CDT
+        description: '{{ doc("KDI58_01_CDT") }}'
+      - name: KDI22_02_CDT
+        description: '{{ doc("KDI22_02_CDT") }}'
+      - name: KDI58_02_CDT
+        description: '{{ doc("KDI58_02_CDT") }}'
+      - name: KDI22_03_CDT
+        description: '{{ doc("KDI22_03_CDT") }}'
+      - name: KDI58_03_CDT
+        description: '{{ doc("KDI58_03_CDT") }}'
+      - name: KDI23_01_CDT
+        description: '{{ doc("KDI23_01_CDT") }}'
+      - name: KDI59_01_CDT
+        description: '{{ doc("KDI59_01_CDT") }}'
+      - name: KDI23_02_CDT
+        description: '{{ doc("KDI23_02_CDT") }}'
+      - name: KDI59_02_CDT
+        description: '{{ doc("KDI59_02_CDT") }}'
+      - name: KDI23_03_CDT
+        description: '{{ doc("KDI23_03_CDT") }}'
+      - name: KDI59_03_CDT
+        description: '{{ doc("KDI59_03_CDT") }}'
+      - name: KDI23_04_CDT
+        description: '{{ doc("KDI23_04_CDT") }}'
+      - name: KDI24_01_CDT
+        description: '{{ doc("KDI24_01_CDT") }}'
+      - name: KDI24_02_CDT
+        description: '{{ doc("KDI24_02_CDT") }}'
+      - name: KDI24_03_CDT
+        description: '{{ doc("KDI24_03_CDT") }}'
+      - name: KDI25_01_CDT
+        description: '{{ doc("KDI25_01_CDT") }}'
+      - name: KDI25_02_CDT
+        description: '{{ doc("KDI25_02_CDT") }}'
+      - name: KDI25_03_CDT
+        description: '{{ doc("KDI25_03_CDT") }}'
+      - name: KDI26_01_CDT
+        description: '{{ doc("KDI26_01_CDT") }}'
+      - name: KDI26_02_CDT
+        description: '{{ doc("KDI26_02_CDT") }}'
+      - name: KDI26_03_CDT
+        description: '{{ doc("KDI26_03_CDT") }}'
+      - name: KDI27_01_CDT
+        description: '{{ doc("KDI27_01_CDT") }}'
+      - name: KDI27_02_CDT
+        description: '{{ doc("KDI27_02_CDT") }}'
+      - name: KDI27_03_CDT
+        description: '{{ doc("KDI27_03_CDT") }}'
+      - name: KDI28_01_CDT
+        description: '{{ doc("KDI28_01_CDT") }}'
+      - name: KDI28_02_CDT
+        description: '{{ doc("KDI28_02_CDT") }}'
+      - name: KDI28_03_CDT
+        description: '{{ doc("KDI28_03_CDT") }}'
+      - name: KDI29_01_CDT
+        description: '{{ doc("KDI29_01_CDT") }}'
+      - name: KDI29_02_CDT
+        description: '{{ doc("KDI29_02_CDT") }}'
+      - name: KDI29_03_CDT
+        description: '{{ doc("KDI29_03_CDT") }}'
+      - name: KDI30_01_CDT
+        description: '{{ doc("KDI30_01_CDT") }}'
+      - name: KDI30_02_CDT
+        description: '{{ doc("KDI30_02_CDT") }}'
+      - name: KDI30_03_CDT
+        description: '{{ doc("KDI30_03_CDT") }}'
+      - name: KDI30_04_CDT
+        description: '{{ doc("KDI30_04_CDT") }}'
+      - name: KDI31_CDT
+        description: '{{ doc("KDI31_CDT") }}'
+      - name: KDI32_CDT
+        description: '{{ doc("KDI32_CDT") }}'
+      - name: KDI33_01_CDT
+        description: '{{ doc("KDI33_01_CDT") }}'
+      - name: KDI33_02_CDT
+        description: '{{ doc("KDI33_02_CDT") }}'
+      - name: KDI33_03_CDT
+        description: '{{ doc("KDI33_03_CDT") }}'
+      - name: KDI33_04_CDT
+        description: '{{ doc("KDI33_04_CDT") }}'
+      - name: KDI34_01_CDT
+        description: '{{ doc("KDI34_01_CDT") }}'
+      - name: KDI34_02_CDT
+        description: '{{ doc("KDI34_02_CDT") }}'
+      - name: KDI34_03_CDT
+        description: '{{ doc("KDI34_03_CDT") }}'
+      - name: KDI34_04_CDT
+        description: '{{ doc("KDI34_04_CDT") }}'
+      - name: KDI34_05_CDT
+        description: '{{ doc("KDI34_05_CDT") }}'
+      - name: KDI35_CDT
+        description: '{{ doc("KDI35_CDT") }}'
+      - name: KDI36_CDT
+        description: '{{ doc("KDI36_CDT") }}'
+      - name: KDI37_CDT
+        description: '{{ doc("KDI37_CDT") }}'
+      - name: KDI38_CDT
+        description: '{{ doc("KDI38_CDT") }}'
+      - name: KDI39_CDT
+        description: '{{ doc("KDI39_CDT") }}'
+      - name: KDI40_CDT
+        description: '{{ doc("KDI40_CDT") }}'
+      - name: KDI41_CDT
+        description: '{{ doc("KDI41_CDT") }}'
+      - name: KDI42_CDT
+        description: '{{ doc("KDI42_CDT") }}'
+      - name: KDI43_CDT
+        description: '{{ doc("KDI43_CDT") }}'
+      - name: KDI44_CDT
+        description: '{{ doc("KDI44_CDT") }}'
+      - name: KDI45_CDT
+        description: '{{ doc("KDI45_CDT") }}'
+      - name: KDI46_CDT
+        description: '{{ doc("KDI46_CDT") }}'
+      - name: KDI47_CDT
+        description: '{{ doc("KDI47_CDT") }}'
+      - name: KDI48_CDT
+        description: '{{ doc("KDI48_CDT") }}'
+      - name: KDI49_CDT
+        description: '{{ doc("KDI49_CDT") }}'
+      - name: KDI50_CDT
+        description: '{{ doc("KDI50_CDT") }}'
+      - name: KDI51_CDT
+        description: '{{ doc("KDI51_CDT") }}'
+      - name: KDI52_CDT
+        description: '{{ doc("KDI52_CDT") }}'
+      - name: KDI53_CDT
+        description: '{{ doc("KDI53_CDT") }}'
+      - name: KDI54_CDT
+        description: '{{ doc("KDI54_CDT") }}'
+        
+   - name: CARD_CLEANSING
+     columns:
+        - name: dv_ldt
+        
+        - name: cob_date
+        
+        - name: KDI01
+        
+        - name: KDI02
+          tests:
+            - test_G1:
+                invalid_table_result : CARD_INVALID
+            - test_G34:
+                invalid_table_result: CARD_INVALID
+            - test_S132:
+                invalid_table_result: CARD_INVALID
+                cus_code: KDI01
+        
+        - name: KDI02_CDT
+        
+        - name: KDI03
+        
+        - name: KDI03_CDT
+        
+        - name: KDI04
+        
+        - name: KDI04_CDT
+        
+        - name: KDI05
+          tests:
+            - test_R43_gioitinh:
+                cus_code: KDI01
+                invalid_table_result: CARD_INVALID
+            - test_G1:
+                invalid_table_result : CARD_INVALID
+        
+        - name: KDI05_CDT
+        
+        - name: KDI06
+        
+        - name: KDI06_CDT
+        
+        - name: KDI07
+          tests:
+            - test_CL5
+            - test_G1:
+                invalid_table_result : CARD_INVALID
+            - test_S234:
+                invalid_table_result: CARD_INVALID
+                cus_code: KDI01
+            - test_S261:
+                invalid_table_result: CARD_INVALID
+                cus_code: KDI01
+            - test_S31:
+                invalid_table_result: CARD_INVALID
+                cus_code: KDI01
+        
+        - name: KDI07_CDT
+        
+        - name: KDI08
+        
+        - name: KDI08_CDT
+        
+        - name: KDI09
+        
+        - name: KDI09_CDT
+        
+        - name: KDI10
+        
+        - name: KDI10_CDT
+        
+        - name: KDI10_01
+        
+        - name: KDI10_01_CDT
+        
+        - name: KDI10_02
+        
+        - name: KDI10_02_CDT
+        
+        - name: KDI10_03
+        
+        - name: KDI10_03_CDT
+        
+        - name: KDI10_04
+        
+        - name: KDI10_04_CDT
+        
+        - name: KDI10_05
+        
+        - name: KDI10_05_CDT
+        
+        - name: KDI10_06
+        
+        - name: KDI10_06_CDT
+        
+        - name: KDI11
+        
+        - name: KDI11_CDT
+        
+        - name: KDI11_01
+        
+        - name: KDI11_01_CDT
+        
+        - name: KDI11_02
+        
+        - name: KDI11_02_CDT
+        
+        - name: KDI11_03
+        
+        - name: KDI11_03_CDT
+        
+        - name: KDI11_04
+        
+        - name: KDI11_04_CDT
+        
+        - name: KDI11_05
+        
+        - name: KDI11_05_CDT
+        
+        - name: KDI11_06
+        
+        - name: KDI11_06_CDT
+        
+        - name: KDI12
+        
+        - name: KDI12_CDT
+        
+        - name: KDI12_01
+        
+        - name: KDI12_01_CDT
+        
+        - name: KDI12_02
+        
+        - name: KDI12_02_CDT
+        
+        - name: KDI12_03
+        
+        - name: KDI12_03_CDT
+        
+        - name: KDI12_04
+        
+        - name: KDI12_04_CDT
+        
+        - name: KDI12_05
+        
+        - name: KDI12_05_CDT
+        
+        - name: KDI12_06
+        
+        - name: KDI12_06_CDT
+        
+        - name: KDI13
+        
+        - name: KDI13_CDT
+        
+        - name: KDI13_01
+        
+        - name: KDI13_01_CDT
+        
+        - name: KDI13_02
+        
+        - name: KDI13_02_CDT
+        
+        - name: KDI13_03
+        
+        - name: KDI13_03_CDT
+        
+        - name: KDI13_04
+        
+        - name: KDI13_04_CDT
+        
+        - name: KDI13_05
+        
+        - name: KDI13_05_CDT
+        
+        - name: KDI13_06
+        
+        - name: KDI13_06_CDT
+        
+        - name: KDI14
+        
+        - name: KDI14_CDT
+        
+        - name: KDI14_01
+        
+        - name: KDI14_01_CDT
+        
+        - name: KDI14_02
+        
+        - name: KDI14_02_CDT
+        
+        - name: KDI14_03
+        
+        - name: KDI14_03_CDT
+        
+        - name: KDI14_04
+        
+        - name: KDI14_04_CDT
+        
+        - name: KDI14_05
+        
+        - name: KDI14_05_CDT
+        
+        - name: KDI14_06
+        
+        - name: KDI14_06_CDT
+        
+        - name: KDI15
+          tests:
+            - test_R51:
+                invalid_table_result : CARD_INVALID
+        
+        - name: KDI15_CDT
+        
+        - name: KDI16
+        
+        - name: KDI16_CDT
+        
+        - name: KDI17
+          tests:
+            - test_G1:
+                invalid_table_result : CARD_INVALID
+            - test_G3:
+                invalid_table_result : CARD_INVALID
+            - test_S124:
+                invalid_table_result : CARD_INVALID
+                cus_code: KDI01
+            - test_S224:
+                invalid_table_result : CARD_INVALID
+                cus_code: KDI01
+        - name: KDI17_CDT
+        
+        - name: KDI18
+        
+        - name: KDI18_CDT
+        
+        - name: KDI19
+          tests:
+            - test_R57:
+                invalid_table_result : CARD_INVALID
+                cus_code: KDI01
+            - test_S229:
+                invalid_table_result : CARD_INVALID
+                cus_code: KDI01
+            - test_S36:
+                invalid_table_result : CARD_INVALID
+                cus_code: KDI01
+        
+        - name: KDI19_CDT
+        
+        - name: KDI20
+        
+        - name: KDI20_CDT
+        
+        - name: KDI21_01
+          tests:
+            - test_CL1
+        - name: KDI21_01_CDT
+        
+        - name: KDI21_02
+          tests:
+            - test_CL5
+            - test_S35:
+                invalid_table_result : CARD_INVALID
+                id_column: KDI21_01
+                cus_code : KDI01 
+            - test_S267:
+                invalid_table_result : CARD_INVALID
+                id_column: KDI21_01
+                cus_code : KDI01       
+        
+        - name: KDI21_02_CDT
+        
+        - name: KDI21_03
+        
+        - name: KDI21_03_CDT
+        
+        - name: KDI22_01
+          tests:
+            - test_CL1
+        
+        - name: KDI22_01_CDT
+        
+        - name: KDI22_02
+          tests:
+            - test_CL5
+            - test_S35:
+                invalid_table_result : CARD_INVALID
+                id_column: KDI22_01 
+                cus_code : KDI01  
+            - test_S267:
+                invalid_table_result : CARD_INVALID
+                id_column: KDI22_01
+                cus_code : KDI01          
+        
+        - name: KDI22_02_CDT
+        
+        - name: KDI22_03
+        
+        - name: KDI22_03_CDT
+        
+        - name: KDI23_01
+          tests:
+            - test_CL1
+        - name: KDI23_01_CDT
+        
+        - name: KDI23_02
+          tests:
+            - test_CL5
+            - test_S35:
+                invalid_table_result : CARD_INVALID
+                id_column: KDI23_01  
+                cus_code : KDI01  
+            - test_S267:
+                invalid_table_result : CARD_INVALID
+                id_column: KDI23_01
+                cus_code : KDI01       
+        
+        - name: KDI23_02_CDT
+        
+        - name: KDI23_03
+        
+        - name: KDI23_03_CDT
+        
+        - name: KDI23_04
+        
+        - name: KDI23_04_CDT
+        
+        - name: KDI24_01
+        
+        - name: KDI24_01_CDT
+        
+        - name: KDI24_02
+        
+        - name: KDI24_02_CDT
+        
+        - name: KDI24_03
+        
+        - name: KDI24_03_CDT
+        
+        - name: KDI25_01
+        
+        - name: KDI25_01_CDT
+        
+        - name: KDI25_02
+        
+        - name: KDI25_02_CDT
+        
+        - name: KDI25_03
+        
+        - name: KDI25_03_CDT
+        
+        - name: KDI26_01
+        
+        - name: KDI26_01_CDT
+        
+        - name: KDI26_02
+        
+        - name: KDI26_02_CDT
+        
+        - name: KDI26_03
+        
+        - name: KDI26_03_CDT
+        
+        - name: KDI27_01
+        
+        - name: KDI27_01_CDT
+        
+        - name: KDI27_02
+        
+        - name: KDI27_02_CDT
+        
+        - name: KDI27_03
+        
+        - name: KDI27_03_CDT
+        
+        - name: KDI28_01
+        
+        - name: KDI28_01_CDT
+        
+        - name: KDI28_02
+        
+        - name: KDI28_02_CDT
+        
+        - name: KDI28_03
+        
+        - name: KDI28_03_CDT
+        
+        - name: KDI29_01
+        
+        - name: KDI29_01_CDT
+        
+        - name: KDI29_02
+        
+        - name: KDI29_02_CDT
+        
+        - name: KDI29_03
+        
+        - name: KDI29_03_CDT
+        
+        - name: KDI30_01
+        
+        - name: KDI30_01_CDT
+        
+        - name: KDI30_02
+        
+        - name: KDI30_02_CDT
+        
+        - name: KDI30_03
+        
+        - name: KDI30_03_CDT
+        
+        - name: KDI30_04
+        
+        - name: KDI30_04_CDT
+        
+        - name: KDI31
+        
+        - name: KDI31_CDT
+        
+        - name: KDI32
+        
+        - name: KDI32_CDT
+        
+        - name: KDI33_01
+        
+        - name: KDI33_01_CDT
+        
+        - name: KDI33_02
+        
+        - name: KDI33_02_CDT
+        
+        - name: KDI33_03
+        
+        - name: KDI33_03_CDT
+        
+        - name: KDI33_04
+        
+        - name: KDI33_04_CDT
+        
+        - name: KDI34_01
+          tests:
+            - test_R43_nghenghiep:
+                cus_code: KDI01
+                invalid_table_result: CARD_INVALID
+        
+        - name: KDI34_01_CDT
+        
+        - name: KDI34_02
+        
+        - name: KDI34_02_CDT
+        
+        - name: KDI34_03
+        
+        - name: KDI34_03_CDT
+        
+        - name: KDI34_04
+        
+        - name: KDI34_04_CDT
+        
+        - name: KDI34_05
+        
+        - name: KDI34_05_CDT
+        
+        - name: KDI35
+        
+        - name: KDI35_CDT
+        
+        - name: KDI36
+        
+        - name: KDI36_CDT
+        
+        - name: KDI37
+        
+        - name: KDI37_CDT
+        
+        - name: KDI38
+        
+        - name: KDI38_CDT
+        
+        - name: KDI39
+        
+        - name: KDI39_CDT
+        
+        - name: KDI40
+        
+        - name: KDI40_CDT
+        
+        - name: KDI41
+        
+        - name: KDI41_CDT
+        
+        - name: KDI42
+        
+        - name: KDI42_CDT
+        
+        - name: KDI43
+        
+        - name: KDI43_CDT
+        
+        - name: KDI44
+        
+        - name: KDI44_CDT
+        
+        - name: KDI45
+        
+        - name: KDI45_CDT
+        
+        - name: KDI46
+        
+        - name: KDI46_CDT
+        
+        - name: KDI47
+        
+        - name: KDI47_CDT
+        
+        - name: KDI48
+        
+        - name: KDI48_CDT
+        
+        - name: KDI49
+        
+        - name: KDI49_CDT
+        
+        - name: KDI50
+        
+        - name: KDI50_CDT
+        
+        - name: KDI51
+        
+        - name: KDI51_CDT
+        
+        - name: KDI52
+          tests:
+            - test_CL5
+        
+        - name: KDI52_CDT
+        
+        - name: KDI53
+        
+        - name: KDI53_CDT
+        
+        - name: KDI54
+        
+        - name: KDI54_CDT
+        
+        - name: KDI55
+          tests:
+            - test_CL1
+        
+        - name: KDI55_CDT
+        
+        - name: KDI56
+        
+        - name: KDI56_CDT
+        
+        - name: KDI57_01
+          tests:
+            - test_CL1
+        
+        - name: KDI57_01_CDT
+        
+        - name: KDI57_02
+        
+        - name: KDI57_02_CDT
+        
+        - name: KDI57_03
+        
+        - name: KDI57_03_CDT
+        
+        - name: KDI58_01
+          tests:
+            - test_CL1
+        - name: KDI58_01_CDT
+        
+        - name: KDI58_02
+        
+        - name: KDI58_02_CDT
+        
+        - name: KDI58_03
+        
+        - name: KDI58_03_CDT
+        
+        - name: KDI59_01
+          tests:
+            - test_CL1
+        
+        - name: KDI59_01_CDT
+        
+        - name: KDI59_02
+        
+        - name: KDI59_02_CDT
+        
+        - name: KDI59_03
+        
+        - name: KDI59_03_CDT

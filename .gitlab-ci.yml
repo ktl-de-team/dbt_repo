@@ -1,0 +1,105 @@
+stages:
+  - pre-build
+  - build
+  - test
+  - deploy
+variables:
+  GIT_STRATEGY: "clone"
+before_script:
+  - |-
+    echo """
+    spark.master                                                local[*]
+    spark.hadoop.hive.metastore.uris                            $HIVE_METASTORE_URIS
+    spark.sql.warehouse.dir                                     $HIVE_WAREHOUSE_DIR
+    spark.hadoop.fs.s3a.endpoint                                $AWS_ENDPOINT
+    spark.hadoop.fs.s3a.path.style.access                       true
+    spark.hadoop.fs.s3a.ssl.enabled                             false
+    spark.hadoop.fs.s3a.impl                                    org.apache.hadoop.fs.s3a.S3AFileSystem
+    spark.hadoop.fs.s3a.aws.credentials.provider                com.amazonaws.auth.EnvironmentVariableCredentialsProvider
+    spark.hadoop.mapreduce.fileoutputcommitter.algorithm.version    2
+    spark.sql.extensions                                        org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions
+    spark.sql.catalog.spark_catalog                             org.apache.iceberg.spark.SparkSessionCatalog
+    spark.sql.catalog.spark_catalog.type                        hive
+    spark.sql.catalog.spark_catalog.metrics-reporter-impl       org.apache.iceberg.metrics.LoggingMetricsReporter
+    spark.sql.catalog.default_iceberg                           org.apache.iceberg.spark.SparkCatalog
+    spark.sql.catalog.default_iceberg.type                      hive
+    spark.sql.catalog.default_iceberg.uri                       $HIVE_METASTORE_URIS
+    spark.sql.catalog.default_iceberg.io-impl                   org.apache.iceberg.aws.s3.S3FileIO
+    spark.sql.catalog.default_iceberg.s3.endpoint               $AWS_ENDPOINT
+    spark.sql.catalog.default_iceberg.warehouse                 $HIVE_WAREHOUSE_DIR
+    spark.sql.catalog.default_iceberg.metrics-reporter-impl     org.apache.iceberg.metrics.LoggingMetricsReporter
+    spark.sql.defaultCatalog                                    spark_catalog
+    spark.driver.maxResultSize                                  0
+    """ >> $SPARK_CONF_DIR/spark-defaults.conf
+    
+# lint-project:
+#   image: 192.168.1.41/k8s-image/ktl-dbt-spark3.5:0.0.4
+#   stage: pre-build
+#   rules:
+#     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH != 'main'
+#   script:
+#     - pip install sqlfluff
+#     - python -m sqlfluff lint models
+
+variables:
+  GIT_STRATEGY: "clone"
+dbt_slim_ci_build:
+  stage: build
+  image: 192.168.1.41/k8s-image/ktl-dbt-spark3.5:1.1.2
+  variables:
+    DBT_PROJECT_DIR: '/builds/de-team/dbt/ktl_dbt'
+    DBT_TARGET_PATH: '/builds/de-team/dbt/ktl_dbt/target'
+  script:
+    - export DBT_PROJECT_DIR="/builds/de-team/dbt/ktl_dbt"
+    - echo "Starting dbt run Slim CI process..."
+    - ktl-dbt deps --upgrade # Install dbt dependencies defined in packages.yml
+    - ktl-dbt run --target test --select state:modified+ --state $DBT_PROJECT_DIR/prod-artifacts # Run modified dbt models only
+  only:
+    - branches
+  except:
+    - main
+  artifacts:
+    paths:
+      - target/
+    expire_in: 1 week
+
+
+dbt_slim_ci_test:
+  stage: test
+  image: 192.168.1.41/k8s-image/ktl-dbt-spark3.5:1.1.2
+  variables:
+    DBT_PROJECT_DIR: '/builds/de-team/dbt/ktl_dbt'
+    DBT_TARGET_PATH: '/builds/de-team/dbt/ktl_dbt/target'
+  script:
+    - export DBT_PROJECT_DIR="/builds/de-team/dbt/ktl_dbt"
+    - echo "Starting dbt test Slim CI process..."
+    - ktl-dbt deps --upgrade # Install dbt dependencies defined in packages.yml
+    - ktl-dbt test --target test --select state:modified+ --state $DBT_PROJECT_DIR/prod-artifacts # Run modified dbt models only
+  only:
+    - branches
+  except:
+    - main
+  artifacts:
+    paths:
+      - target/
+    expire_in: 1 week
+
+
+dbt_slim_ci_deploy:
+  stage: deploy
+  image: 192.168.1.41/k8s-image/ktl-dbt-spark3.5:1.1.2
+  before_script:
+    - export DBT_PROJECT_DIR=/builds/de-team/dbt/ktl_dbt
+    - cd $DBT_PROJECT_DIR
+    - wget https://dl.min.io/client/mc/release/linux-amd64/mc
+    - chmod +x mc
+    - ./mc alias set minio $AWS_ENDPOINT $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY
+  script:    
+    - ktl-dbt deps --upgrade
+    - ktl-dbt compile --target-path $DBT_PROJECT_DIR/prod-artifacts
+    - ./mc cp $DBT_PROJECT_DIR/prod-artifacts/ minio/$AWS_BUCKET/tmp/dbt-artifacts/prod-artifacts --recursive
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: never

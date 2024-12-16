@@ -1,0 +1,20 @@
+﻿BR_CD,BR_NM,BR_ADDR,PARENT_BR_CD,PARENT_BR_NM,PARENT_BR_CD_LV1,PARENT_BR_NM_LV1,AREA_4_CD,AREA_4_NM
+001,CHI NHANH THANG LONG,"Nghĩa Tân, Cầu Giấy, Hà Nội",470,CHI NHANH HUE,,,4A,KHU VUC PHIA BAC
+002,CHI NHANH THANH HOA,"Dương Đình Nghệ, P.Tân Sơn, TP.Thanh Hóa",,,,,4A,KHU VUC PHIA BAC
+003,CHI NHANH DAK LAK,"Trần Hương Đạo, T.P Buôn Ma Thuột, DAK LAK",,,,,4D,KHU VUC DONG NAM BO
+004,PGD LONG MY,P. Bình Thạnh - TX. Long Mỹ - Tỉnh Hậu Giang,,,,,4C,KHU VUC TAY NAM BO
+005,CHI NHANH QUAN 2,"Phường Thảo Điền, Quận 2, TP. Hồ Chí Minh",,,,,4B,KHU VUC HCM1
+006,CHI NHANH QUAN 3,"Cách Mạng tháng 8, phường 11, Quận 3, thành phố HCM",,,,,4B,KHU VUC HCM1
+007,CHI NHANH QUAN 1,"công trường Mê Linh, phường Bến Nghé, Quận 1, thành phố HCM",,,,,4B,KHU VUC HCM1
+110,CHI NHANH THANG LONG,"Hoàng Quốc Việt, Phường Nghĩa Tân, Quận Cầu Giấy, Thành Phố Hà Nội",5,CHI NHANH QUAN 2,,,4A,KHU VUC PHIA BAC
+222,CHI NHANH QUAN 2,"Thảo Điền, Phường Thảo Điền, Quận 2, TP. Hồ Chí Minh",500,CHI NHANH TP HO CHI MINH,,,4B,KHU VUC HCM1
+333,CHI NHANH QUAN 11,"Lạc Long Quân, P. 5, Q. 11, Hồ Chí Minh",420,CHI NHANH THANH HOA,,,4B,KHU VUC HCM1
+340,CHI NHANH NAM DINH,"Đường Giải phóng kéo dài, KĐT Hòa Vượng, P. Cửa Bắc, TP Nam Định",2,CHI NHANH THANH HOA,,,4A,KHU VUC PHIA BAC
+420,CHI NHANH THANH HOA,"Đại lộ Lê Lợi, phường Lam Sơn, thành phố Thanh Hóa, tỉnh Thanh Hóa. ",7,CHI NHANH QUAN 1,,,4A,KHU VUC PHIA BAC
+430,CHI NHANH NGHE AN,"Đường Quang Trung, Thành Phố Vinh, Tỉnh Nghệ An.",1,CHI NHANH THANG LONG,,,4A,KHU VUC PHIA BAC
+470,CHI NHANH HUE,"Bùi Thị Xuân, phường Phường Đúc, tp Huế, tỉnh Thừa Thiên Huế",222,CHI NHANH QUAN 2,,,4B,KHU VUC MIEN TRUNG
+500,CHI NHANH TP HO CHI MINH,"Nguyễn Thị Minh Khai, Phường 5, Quận 3, Tp. Hồ Chí Minh",4,PGD LONG MY,,,4D,KHU VUC DONG NAM BO
+660,CHI NHANH DAK LAK,"Phường Thành nhất,TP Buôn Ma Thuột, Tỉnh Đắk Lắk ",6,CHI NHANH QUAN 3,,,4D,KHU VUC DONG NAM BO
+800,CHI NHANH HAU GIANG,Võ Văn Kiệt - Khu vực II - Phường V - TP.Vị Thanh - Hậu Giang,3,CHI NHANH DAK LAK,,,4C,KHU VUC TAY NAM BO
+803,PGD LONG MY,Ấp 1- Xã Vĩnh Viễn- Huyện Long Mỹ-Tỉnh Hậu Giang,660,CHI NHANH DAK LAK,,,4C,KHU VUC TAY NAM BO
+910,CHI NHANH AN GIANG,"Hai Bà Trưng, Phường Mỹ Long, Thành Phố Long Xuyên, Tỉnh An Giang.",333,CHI NHANH QUAN 11,,,4C,KHU VUC TAY NAM BO

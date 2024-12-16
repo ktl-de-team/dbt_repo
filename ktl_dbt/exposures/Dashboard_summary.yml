@@ -1,0 +1,20 @@
+version: 2
+
+exposures:
+
+  - name: Dashboard_summary
+    label: Dashboard_summary
+    type: dashboard
+    maturity: high
+    url: https://superset.katalyst.local/superset/dashboard/p/7wVZ3eGJPGB/
+    description: >
+      Mô tả thông tin khách hàng cơ bản 
+
+    depends_on:
+      - ref('dim_customer_corebank')
+      - ref('dim_customer_los')
+      - ref('dim_customer_corecard')
+
+    owner:
+      name: Katalyst_dev
+      email: dev@katalyst.vn

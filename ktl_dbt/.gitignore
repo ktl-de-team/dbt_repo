@@ -1,0 +1,6 @@
+
+target/
+dbt_packages/
+logs/
+edr_target/
+macros/ktl_autovault_configs

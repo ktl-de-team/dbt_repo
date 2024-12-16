@@ -1,0 +1,7 @@
+
+wget -i jars.txt -P ./jars
+docker build . -t 192.168.1.41/k8s-image/ktl-dbt-spark3.5:1.1.4 --no-cache
+docker push 192.168.1.41/k8s-image/ktl-dbt-spark3.5:1.1.4
+
+docker tag 192.168.1.41/k8s-image/ktl-dbt-spark3.5:1.1.4 thanhnhktl/ktl-dbt-spark3.5:1.1.4
+docker push thanhnhktl/ktl-dbt-spark3.5:1.1.4

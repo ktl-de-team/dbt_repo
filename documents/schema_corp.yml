@@ -1,0 +1,888 @@
+version: 2
+models:
+  - name: T24_CORP_CLEANSING
+    columns:
+      - name: KDC01
+        description: '{{ doc("KDC01") }}'
+      - name: KDC34
+        description: '{{ doc("KDC34") }}'
+      - name: KDC02
+        description: '{{ doc("KDC02") }}'
+        tests:
+            - test_G1:
+                invalid_table_result : T24_CORP_INVALID
+            - test_G34:
+                invalid_table_result : T24_CORP_INVALID
+            - test_S132:
+                invalid_table_result : T24_CORP_INVALID
+                cus_code: KDC01
+        
+      - name: KDC03
+        description: '{{ doc("KDC03") }}'
+      - name: KDC04
+        description: '{{ doc("KDC04") }}'
+      - name: KDC05_01
+        description: '{{ doc("KDC05_01") }}'
+      - name: KDC35_01
+        description: '{{ doc("KDC35_01") }}'
+      - name: KDC05_02
+        description: '{{ doc("KDC05_02") }}'
+        tests:
+            - test_CL5
+      - name: KDC35_02
+        description: '{{ doc("KDC35_02") }}'
+      - name: KDC05_03
+        description: '{{ doc("KDC05_03") }}'
+      - name: KDC35_03
+        description: '{{ doc("KDC35_03") }}'
+      - name: KDC06
+        description: '{{ doc("KDC06") }}'
+      - name: KDC07
+        description: '{{ doc("KDC07") }}'
+      - name: KDC08
+        description: '{{ doc("KDC08") }}'
+      - name: KDC09
+        description: '{{ doc("KDC09") }}'
+        tests:
+            - test_G1:
+                invalid_table_result : T24_CORP_INVALID
+            - test_R57:
+                invalid_table_result : T24_CORP_INVALID
+                cus_code : KDC01
+            - test_S229:
+                invalid_table_result : T24_CORP_INVALID
+                cus_code : KDC01
+            - test_S36:
+                invalid_table_result : T24_CORP_INVALID
+                cus_code: KDC01
+      - name: KDC37
+        description: '{{ doc("KDC37") }}'
+        tests:
+            - test_R57:
+                invalid_table_result : T24_CORP_INVALID
+                cus_code: KDC01
+            - test_S229:
+                invalid_table_result : T24_CORP_INVALID
+                cus_code: KDC01
+            - test_S36:
+                invalid_table_result : T24_CORP_INVALID
+                cus_code: KDC01
+      - name: KDC10
+        description: '{{ doc("KDC10") }}'
+        tests:
+            - test_S123:
+                invalid_table_result : T24_CORP_INVALID
+                cus_code : KDC01
+            - test_G1:
+                invalid_table_result : T24_CORP_INVALID
+            - test_G36:
+                invalid_table_result : T24_CORP_INVALID
+      - name: KDC11
+        description: '{{ doc("KDC11") }}'
+      - name: KDC11_01
+        description: '{{ doc("KDC11_01") }}'
+      - name: KDC11_02
+        description: '{{ doc("KDC11_02") }}'
+      - name: KDC11_03
+        description: '{{ doc("KDC11_03") }}'
+      - name: KDC11_04
+        description: '{{ doc("KDC11_04") }}'
+      - name: KDC11_05
+        description: '{{ doc("KDC11_05") }}'
+      - name: KDC12
+        description: '{{ doc("KDC12") }}'
+      - name: KDC13
+        description: '{{ doc("KDC13") }}'
+      - name: KDC14_01
+        description: '{{ doc("KDC14_01") }}'
+      - name: KDC14_02
+        description: '{{ doc("KDC14_02") }}'
+      - name: KDC14_03
+        description: '{{ doc("KDC14_03") }}'
+      - name: KDC14_04
+        description: '{{ doc("KDC14_04") }}'
+      - name: KDC14_05
+        description: '{{ doc("KDC14_05") }}'
+      - name: KDC15_01
+        description: '{{ doc("KDC15_01") }}'
+      - name: KDC15_02
+        description: '{{ doc("KDC15_02") }}'
+      - name: KDC15_03
+        description: '{{ doc("KDC15_03") }}'
+      - name: KDC15_04
+        description: '{{ doc("KDC15_04") }}'
+      - name: KDC15_05
+        description: '{{ doc("KDC15_05") }}'
+      - name: KDC16_01
+        description: '{{ doc("KDC16_01") }}'
+      - name: KDC36_01
+        description: '{{ doc("KDC36_01") }}'
+      - name: KDC16_02
+        description: '{{ doc("KDC16_02") }}'
+        tests:
+            - test_CL5
+      - name: KDC36_02
+        description: '{{ doc("KDC36_02") }}'
+      - name: KDC16_03
+        description: '{{ doc("KDC16_03") }}'
+      - name: KDC36_03
+        description: '{{ doc("KDC36_03") }}'
+      - name: KDC17
+        description: '{{ doc("KDC17") }}'
+      - name: KDC18
+        description: '{{ doc("KDC18") }}'
+      - name: KDC19
+        description: '{{ doc("KDC19") }}'
+      - name: KDC20
+        description: '{{ doc("KDC20") }}'
+      - name: KDC21
+        description: '{{ doc("KDC21") }}'
+      - name: KDC22_01
+        description: '{{ doc("KDC22_01") }}'
+      - name: KDC22_02
+        description: '{{ doc("KDC22_02") }}'
+      - name: KDC23_01
+        description: '{{ doc("KDC23_01") }}'
+      - name: KDC23_02
+        description: '{{ doc("KDC23_02") }}'
+      - name: KDC24_01
+        description: '{{ doc("KDC24_01") }}'
+      - name: KDC24_02
+        description: '{{ doc("KDC24_02") }}'
+      - name: KDC25_01
+        description: '{{ doc("KDC25_01") }}'
+      - name: KDC25_02
+        description: '{{ doc("KDC25_02") }}'
+      - name: KDC26
+        description: '{{ doc("KDC26") }}'
+      - name: KDC27
+        description: '{{ doc("KDC27") }}'
+      - name: KDC28
+        description: '{{ doc("KDC28") }}'
+        tests:
+            - test_CL1
+            - test_CL2:
+                cus_code: KDC01
+            - test_G1:
+                invalid_table_result : T24_CORP_INVALID
+            - test_G3:
+                invalid_table_result : T24_CORP_INVALID  
+            - test_S224:
+                invalid_table_result : T24_CORP_INVALID
+                cus_code: KDC01
+      - name: KDC29
+        description: '{{ doc("KDC29") }}'
+      - name: KDC30
+        description: '{{ doc("KDC30") }}'
+      - name: KDC31
+        description: '{{ doc("KDC31") }}'
+      - name: KDC32
+        description: '{{ doc("KDC32") }}'
+      - name: KDC33
+        description: '{{ doc("KDC33") }}'
+      - name: KDC01_CDT
+        description: '{{ doc("KDC01_CDT") }}'
+      - name: KDC34_CDT
+        description: '{{ doc("KDC34_CDT") }}'
+      - name: KDC02_CDT
+        description: '{{ doc("KDC02_CDT") }}'
+      - name: KDC03_CDT
+        description: '{{ doc("KDC03_CDT") }}'
+      - name: KDC04_CDT
+        description: '{{ doc("KDC04_CDT") }}'
+      - name: KDC05_01_CDT
+        description: '{{ doc("KDC05_01_CDT") }}'
+      - name: KDC35_01_CDT
+        description: '{{ doc("KDC35_01_CDT") }}'
+      - name: KDC05_02_CDT
+        description: '{{ doc("KDC05_02_CDT") }}'
+      - name: KDC35_02_CDT
+        description: '{{ doc("KDC35_02_CDT") }}'
+      - name: KDC05_03_CDT
+        description: '{{ doc("KDC05_03_CDT") }}'
+      - name: KDC35_03_CDT
+        description: '{{ doc("KDC35_03_CDT") }}'
+      - name: KDC06_CDT
+        description: '{{ doc("KDC06_CDT") }}'
+      - name: KDC07_CDT
+        description: '{{ doc("KDC07_CDT") }}'
+      - name: KDC08_CDT
+        description: '{{ doc("KDC08_CDT") }}'
+      - name: KDC09_CDT
+        description: '{{ doc("KDC09_CDT") }}'
+      - name: KDC37_CDT
+        description: '{{ doc("KDC37_CDT") }}'
+      - name: KDC10_CDT
+        description: '{{ doc("KDC10_CDT") }}'
+      - name: KDC11_CDT
+        description: '{{ doc("KDC11_CDT") }}'
+      - name: KDC11_01_CDT
+        description: '{{ doc("KDC11_01_CDT") }}'
+      - name: KDC11_02_CDT
+        description: '{{ doc("KDC11_02_CDT") }}'
+      - name: KDC11_03_CDT
+        description: '{{ doc("KDC11_03_CDT") }}'
+      - name: KDC11_04_CDT
+        description: '{{ doc("KDC11_04_CDT") }}'
+      - name: KDC11_05_CDT
+        description: '{{ doc("KDC11_05_CDT") }}'
+      - name: KDC12_CDT
+        description: '{{ doc("KDC12_CDT") }}'
+      - name: KDC13_CDT
+        description: '{{ doc("KDC13_CDT") }}'
+      - name: KDC14_01_CDT
+        description: '{{ doc("KDC14_01_CDT") }}'
+      - name: KDC14_02_CDT
+        description: '{{ doc("KDC14_02_CDT") }}'
+      - name: KDC14_03_CDT
+        description: '{{ doc("KDC14_03_CDT") }}'
+      - name: KDC14_04_CDT
+        description: '{{ doc("KDC14_04_CDT") }}'
+      - name: KDC14_05_CDT
+        description: '{{ doc("KDC14_05_CDT") }}'
+      - name: KDC15_01_CDT
+        description: '{{ doc("KDC15_01_CDT") }}'
+      - name: KDC15_02_CDT
+        description: '{{ doc("KDC15_02_CDT") }}'
+      - name: KDC15_03_CDT
+        description: '{{ doc("KDC15_03_CDT") }}'
+      - name: KDC15_04_CDT
+        description: '{{ doc("KDC15_04_CDT") }}'
+      - name: KDC15_05_CDT
+        description: '{{ doc("KDC15_05_CDT") }}'
+      - name: KDC16_01_CDT
+        description: '{{ doc("KDC16_01_CDT") }}'
+      - name: KDC36_01_CDT
+        description: '{{ doc("KDC36_01_CDT") }}'
+      - name: KDC16_02_CDT
+        description: '{{ doc("KDC16_02_CDT") }}'
+      - name: KDC36_02_CDT
+        description: '{{ doc("KDC36_02_CDT") }}'
+      - name: KDC16_03_CDT
+        description: '{{ doc("KDC16_03_CDT") }}'
+      - name: KDC36_03_CDT
+        description: '{{ doc("KDC36_03_CDT") }}'
+      - name: KDC17_CDT
+        description: '{{ doc("KDC17_CDT") }}'
+      - name: KDC18_CDT
+        description: '{{ doc("KDC18_CDT") }}'
+      - name: KDC19_CDT
+        description: '{{ doc("KDC19_CDT") }}'
+      - name: KDC20_CDT
+        description: '{{ doc("KDC20_CDT") }}'
+      - name: KDC21_CDT
+        description: '{{ doc("KDC21_CDT") }}'
+      - name: KDC22_01_CDT
+        description: '{{ doc("KDC22_01_CDT") }}'
+      - name: KDC22_02_CDT
+        description: '{{ doc("KDC22_02_CDT") }}'
+      - name: KDC23_01_CDT
+        description: '{{ doc("KDC23_01_CDT") }}'
+      - name: KDC23_02_CDT
+        description: '{{ doc("KDC23_02_CDT") }}'
+      - name: KDC24_01_CDT
+        description: '{{ doc("KDC24_01_CDT") }}'
+      - name: KDC24_02_CDT
+        description: '{{ doc("KDC24_02_CDT") }}'
+      - name: KDC25_01_CDT
+        description: '{{ doc("KDC25_01_CDT") }}'
+      - name: KDC25_02_CDT
+        description: '{{ doc("KDC25_02_CDT") }}'
+      - name: KDC26_CDT
+        description: '{{ doc("KDC26_CDT") }}'
+      - name: KDC27_CDT
+        description: '{{ doc("KDC27_CDT") }}'
+      - name: KDC28_CDT
+        description: '{{ doc("KDC28_CDT") }}'
+      - name: KDC29_CDT
+        description: '{{ doc("KDC29_CDT") }}'
+      - name: KDC30_CDT
+        description: '{{ doc("KDC30_CDT") }}'
+      - name: KDC31_CDT
+        description: '{{ doc("KDC31_CDT") }}'
+      - name: KDC32_CDT
+        description: '{{ doc("KDC32_CDT") }}'
+      - name: KDC33_CDT
+        description: '{{ doc("KDC33_CDT") }}'
+
+  - name: CARD_CORP_CLEANSING
+    columns:
+      - name: KDC01
+        description: '{{ doc("KDC01") }}'
+      - name: KDC34
+        description: '{{ doc("KDC34") }}'
+      - name: KDC02
+        description: '{{ doc("KDC02") }}'
+        tests:
+          - test_G1:
+              invalid_table_result : CARD_CORP_INVALID
+          - test_G34:
+              invalid_table_result : CARD_CORP_INVALID
+          - test_S132:
+              invalid_table_result : CARD_CORP_INVALID
+              cus_code : KDC01
+      - name: KDC03
+        description: '{{ doc("KDC03") }}'
+      - name: KDC04
+        description: '{{ doc("KDC04") }}'
+      - name: KDC05_01
+        description: '{{ doc("KDC05_01") }}'
+      - name: KDC35_01
+        description: '{{ doc("KDC35_01") }}'
+      - name: KDC05_02
+        description: '{{ doc("KDC05_02") }}'
+        tests:
+          - test_CL5
+      - name: KDC35_02
+        description: '{{ doc("KDC35_02") }}'
+      - name: KDC05_03
+        description: '{{ doc("KDC05_03") }}'
+      - name: KDC35_03
+        description: '{{ doc("KDC35_03") }}'
+      - name: KDC06
+        description: '{{ doc("KDC06") }}'
+      - name: KDC07
+        description: '{{ doc("KDC07") }}'
+      - name: KDC08
+        description: '{{ doc("KDC08") }}'
+      - name: KDC09
+        description: '{{ doc("KDC09") }}'
+        tests:
+          - test_G1:
+              invalid_table_result : CARD_CORP_INVALID
+          - test_S229:
+              invalid_table_result : CARD_CORP_INVALID
+              cus_code: KDC01
+          - test_S36:
+              invalid_table_result : CARD_CORP_INVALID
+              cus_code: KDC01
+      - name: KDC37
+        description: '{{ doc("KDC37") }}'
+      - name: KDC10
+        description: '{{ doc("KDC10") }}'
+        tests:
+          - test_G1:
+              invalid_table_result : CARD_CORP_INVALID
+          - test_G36:
+              invalid_table_result : CARD_CORP_INVALID
+          - test_S123:
+              invalid_table_result : CARD_CORP_INVALID
+              cus_code: KDC01
+      - name: KDC11
+        description: '{{ doc("KDC11") }}'
+      - name: KDC11_01
+        description: '{{ doc("KDC11_01") }}'
+      - name: KDC11_02
+        description: '{{ doc("KDC11_02") }}'
+      - name: KDC11_03
+        description: '{{ doc("KDC11_03") }}'
+      - name: KDC11_04
+        description: '{{ doc("KDC11_04") }}'
+      - name: KDC11_05
+        description: '{{ doc("KDC11_05") }}'
+      - name: KDC12
+        description: '{{ doc("KDC12") }}'
+      - name: KDC13
+        description: '{{ doc("KDC13") }}'
+      - name: KDC14_01
+        description: '{{ doc("KDC14_01") }}'
+      - name: KDC14_02
+        description: '{{ doc("KDC14_02") }}'
+      - name: KDC14_03
+        description: '{{ doc("KDC14_03") }}'
+      - name: KDC14_04
+        description: '{{ doc("KDC14_04") }}'
+      - name: KDC14_05
+        description: '{{ doc("KDC14_05") }}'
+      - name: KDC15_01
+        description: '{{ doc("KDC15_01") }}'
+      - name: KDC15_02
+        description: '{{ doc("KDC15_02") }}'
+      - name: KDC15_03
+        description: '{{ doc("KDC15_03") }}'
+      - name: KDC15_04
+        description: '{{ doc("KDC15_04") }}'
+      - name: KDC15_05
+        description: '{{ doc("KDC15_05") }}'
+      - name: KDC16_01
+        description: '{{ doc("KDC16_01") }}'
+        tests:
+          - test_CL1
+      - name: KDC36_01
+        description: '{{ doc("KDC36_01") }}'
+      - name: KDC16_02
+        description: '{{ doc("KDC16_02") }}'
+        tests:
+          - test_CL5
+      - name: KDC36_02
+        description: '{{ doc("KDC36_02") }}'
+      - name: KDC16_03
+        description: '{{ doc("KDC16_03") }}'
+      - name: KDC36_03
+        description: '{{ doc("KDC36_03") }}'
+      - name: KDC17
+        description: '{{ doc("KDC17") }}'
+      - name: KDC18
+        description: '{{ doc("KDC18") }}'
+      - name: KDC19
+        description: '{{ doc("KDC19") }}'
+      - name: KDC20
+        description: '{{ doc("KDC20") }}'
+      - name: KDC21
+        description: '{{ doc("KDC21") }}'
+      - name: KDC22_01
+        description: '{{ doc("KDC22_01") }}'
+      - name: KDC22_02
+        description: '{{ doc("KDC22_02") }}'
+      - name: KDC23_01
+        description: '{{ doc("KDC23_01") }}'
+      - name: KDC23_02
+        description: '{{ doc("KDC23_02") }}'
+      - name: KDC24_01
+        description: '{{ doc("KDC24_01") }}'
+      - name: KDC24_02
+        description: '{{ doc("KDC24_02") }}'
+      - name: KDC25_01
+        description: '{{ doc("KDC25_01") }}'
+      - name: KDC25_02
+        description: '{{ doc("KDC25_02") }}'
+      - name: KDC26
+        description: '{{ doc("KDC26") }}'
+      - name: KDC27
+        description: '{{ doc("KDC27") }}'
+      - name: KDC28
+        description: '{{ doc("KDC28") }}'
+        tests:
+          - test_CL1
+          - test_CL2:
+              cus_code: KDC01
+          - test_G1:
+              invalid_table_result : CARD_CORP_INVALID
+          - test_G3:
+              invalid_table_result : CARD_CORP_INVALID
+          - test_S124:
+              invalid_table_result : CARD_CORP_INVALID
+              cus_code: KDC01
+          - test_S224:
+              invalid_table_result : CARD_CORP_INVALID
+              cus_code: KDC01
+      - name: KDC29
+        description: '{{ doc("KDC29") }}'
+      - name: KDC30
+        description: '{{ doc("KDC30") }}'
+      - name: KDC31
+        description: '{{ doc("KDC31") }}'
+        tests:
+          - test_CL1
+          - test_CL5
+      - name: KDC32
+        description: '{{ doc("KDC32") }}'
+      - name: KDC33
+        description: '{{ doc("KDC33") }}'
+      - name: KDC01_CDT
+        description: '{{ doc("KDC01_CDT") }}'
+      - name: KDC34_CDT
+        description: '{{ doc("KDC34_CDT") }}'
+      - name: KDC02_CDT
+        description: '{{ doc("KDC02_CDT") }}'
+      - name: KDC03_CDT
+        description: '{{ doc("KDC03_CDT") }}'
+      - name: KDC04_CDT
+        description: '{{ doc("KDC04_CDT") }}'
+      - name: KDC05_01_CDT
+        description: '{{ doc("KDC05_01_CDT") }}'
+      - name: KDC35_01_CDT
+        description: '{{ doc("KDC35_01_CDT") }}'
+      - name: KDC05_02_CDT
+        description: '{{ doc("KDC05_02_CDT") }}'
+      - name: KDC35_02_CDT
+        description: '{{ doc("KDC35_02_CDT") }}'
+      - name: KDC05_03_CDT
+        description: '{{ doc("KDC05_03_CDT") }}'
+      - name: KDC35_03_CDT
+        description: '{{ doc("KDC35_03_CDT") }}'
+      - name: KDC06_CDT
+        description: '{{ doc("KDC06_CDT") }}'
+      - name: KDC07_CDT
+        description: '{{ doc("KDC07_CDT") }}'
+      - name: KDC08_CDT
+        description: '{{ doc("KDC08_CDT") }}'
+      - name: KDC09_CDT
+        description: '{{ doc("KDC09_CDT") }}'
+      - name: KDC37_CDT
+        description: '{{ doc("KDC37_CDT") }}'
+      - name: KDC10_CDT
+        description: '{{ doc("KDC10_CDT") }}'
+      - name: KDC11_CDT
+        description: '{{ doc("KDC11_CDT") }}'
+      - name: KDC11_01_CDT
+        description: '{{ doc("KDC11_01_CDT") }}'
+      - name: KDC11_02_CDT
+        description: '{{ doc("KDC11_02_CDT") }}'
+      - name: KDC11_03_CDT
+        description: '{{ doc("KDC11_03_CDT") }}'
+      - name: KDC11_04_CDT
+        description: '{{ doc("KDC11_04_CDT") }}'
+      - name: KDC11_05_CDT
+        description: '{{ doc("KDC11_05_CDT") }}'
+      - name: KDC12_CDT
+        description: '{{ doc("KDC12_CDT") }}'
+      - name: KDC13_CDT
+        description: '{{ doc("KDC13_CDT") }}'
+      - name: KDC14_01_CDT
+        description: '{{ doc("KDC14_01_CDT") }}'
+      - name: KDC14_02_CDT
+        description: '{{ doc("KDC14_02_CDT") }}'
+      - name: KDC14_03_CDT
+        description: '{{ doc("KDC14_03_CDT") }}'
+      - name: KDC14_04_CDT
+        description: '{{ doc("KDC14_04_CDT") }}'
+      - name: KDC14_05_CDT
+        description: '{{ doc("KDC14_05_CDT") }}'
+      - name: KDC15_01_CDT
+        description: '{{ doc("KDC15_01_CDT") }}'
+      - name: KDC15_02_CDT
+        description: '{{ doc("KDC15_02_CDT") }}'
+      - name: KDC15_03_CDT
+        description: '{{ doc("KDC15_03_CDT") }}'
+      - name: KDC15_04_CDT
+        description: '{{ doc("KDC15_04_CDT") }}'
+      - name: KDC15_05_CDT
+        description: '{{ doc("KDC15_05_CDT") }}'
+      - name: KDC16_01_CDT
+        description: '{{ doc("KDC16_01_CDT") }}'
+      - name: KDC36_01_CDT
+        description: '{{ doc("KDC36_01_CDT") }}'
+      - name: KDC16_02_CDT
+        description: '{{ doc("KDC16_02_CDT") }}'
+      - name: KDC36_02_CDT
+        description: '{{ doc("KDC36_02_CDT") }}'
+      - name: KDC16_03_CDT
+        description: '{{ doc("KDC16_03_CDT") }}'
+      - name: KDC36_03_CDT
+        description: '{{ doc("KDC36_03_CDT") }}'
+      - name: KDC17_CDT
+        description: '{{ doc("KDC17_CDT") }}'
+      - name: KDC18_CDT
+        description: '{{ doc("KDC18_CDT") }}'
+      - name: KDC19_CDT
+        description: '{{ doc("KDC19_CDT") }}'
+      - name: KDC20_CDT
+        description: '{{ doc("KDC20_CDT") }}'
+      - name: KDC21_CDT
+        description: '{{ doc("KDC21_CDT") }}'
+      - name: KDC22_01_CDT
+        description: '{{ doc("KDC22_01_CDT") }}'
+      - name: KDC22_02_CDT
+        description: '{{ doc("KDC22_02_CDT") }}'
+      - name: KDC23_01_CDT
+        description: '{{ doc("KDC23_01_CDT") }}'
+      - name: KDC23_02_CDT
+        description: '{{ doc("KDC23_02_CDT") }}'
+      - name: KDC24_01_CDT
+        description: '{{ doc("KDC24_01_CDT") }}'
+      - name: KDC24_02_CDT
+        description: '{{ doc("KDC24_02_CDT") }}'
+      - name: KDC25_01_CDT
+        description: '{{ doc("KDC25_01_CDT") }}'
+      - name: KDC25_02_CDT
+        description: '{{ doc("KDC25_02_CDT") }}'
+      - name: KDC26_CDT
+        description: '{{ doc("KDC26_CDT") }}'
+      - name: KDC27_CDT
+        description: '{{ doc("KDC27_CDT") }}'
+      - name: KDC28_CDT
+        description: '{{ doc("KDC28_CDT") }}'
+      - name: KDC29_CDT
+        description: '{{ doc("KDC29_CDT") }}'
+      - name: KDC30_CDT
+        description: '{{ doc("KDC30_CDT") }}'
+      - name: KDC31_CDT
+        description: '{{ doc("KDC31_CDT") }}'
+      - name: KDC32_CDT
+        description: '{{ doc("KDC32_CDT") }}'
+      - name: KDC33_CDT
+        description: '{{ doc("KDC33_CDT") }}'
+
+  - name: CRM_CORP_CLEANSING
+    columns:
+      - name: KDC01
+        description: '{{ doc("KDC01") }}'
+      - name: KDC34
+        description: '{{ doc("KDC34") }}'
+      - name: KDC02
+        description: '{{ doc("KDC02") }}'
+      - name: KDC03
+        description: '{{ doc("KDC03") }}'
+      - name: KDC04
+        description: '{{ doc("KDC04") }}'
+      - name: KDC05_01
+        description: '{{ doc("KDC05_01") }}'
+      - name: KDC35_01
+        description: '{{ doc("KDC35_01") }}'
+      - name: KDC05_02
+        description: '{{ doc("KDC05_02") }}'
+        tests:
+          - test_CL5
+      - name: KDC35_02
+        description: '{{ doc("KDC35_02") }}'
+      - name: KDC05_03
+        description: '{{ doc("KDC05_03") }}'
+      - name: KDC35_03
+        description: '{{ doc("KDC35_03") }}'
+      - name: KDC06
+        description: '{{ doc("KDC06") }}'
+      - name: KDC07
+        description: '{{ doc("KDC07") }}'
+      - name: KDC08
+        description: '{{ doc("KDC08") }}'
+      - name: KDC09
+        description: '{{ doc("KDC09") }}'
+      - name: KDC37
+        description: '{{ doc("KDC37") }}'
+      - name: KDC10
+        description: '{{ doc("KDC10") }}'
+      - name: KDC11
+        description: '{{ doc("KDC11") }}'
+      - name: KDC11_01
+        description: '{{ doc("KDC11_01") }}'
+      - name: KDC11_02
+        description: '{{ doc("KDC11_02") }}'
+      - name: KDC11_03
+        description: '{{ doc("KDC11_03") }}'
+      - name: KDC11_04
+        description: '{{ doc("KDC11_04") }}'
+      - name: KDC11_05
+        description: '{{ doc("KDC11_05") }}'
+      - name: KDC12
+        description: '{{ doc("KDC12") }}'
+      - name: KDC13
+        description: '{{ doc("KDC13") }}'
+      - name: KDC14_01
+        description: '{{ doc("KDC14_01") }}'
+      - name: KDC14_02
+        description: '{{ doc("KDC14_02") }}'
+      - name: KDC14_03
+        description: '{{ doc("KDC14_03") }}'
+      - name: KDC14_04
+        description: '{{ doc("KDC14_04") }}'
+      - name: KDC14_05
+        description: '{{ doc("KDC14_05") }}'
+      - name: KDC15_01
+        description: '{{ doc("KDC15_01") }}'
+      - name: KDC15_02
+        description: '{{ doc("KDC15_02") }}'
+      - name: KDC15_03
+        description: '{{ doc("KDC15_03") }}'
+      - name: KDC15_04
+        description: '{{ doc("KDC15_04") }}'
+      - name: KDC15_05
+        description: '{{ doc("KDC15_05") }}'
+      - name: KDC16_01
+        description: '{{ doc("KDC16_01") }}'
+      - name: KDC36_01
+        description: '{{ doc("KDC36_01") }}'
+      - name: KDC16_02
+        description: '{{ doc("KDC16_02") }}'
+        tests:
+          - test_CL5
+      - name: KDC36_02
+        description: '{{ doc("KDC36_02") }}'
+      - name: KDC16_03
+        description: '{{ doc("KDC16_03") }}'
+      - name: KDC36_03
+        description: '{{ doc("KDC36_03") }}'
+      - name: KDC17
+        description: '{{ doc("KDC17") }}'
+      - name: KDC18
+        description: '{{ doc("KDC18") }}'
+      - name: KDC19
+        description: '{{ doc("KDC19") }}'
+      - name: KDC20
+        description: '{{ doc("KDC20") }}'
+      - name: KDC21
+        description: '{{ doc("KDC21") }}'
+      - name: KDC22_01
+        description: '{{ doc("KDC22_01") }}'
+      - name: KDC22_02
+        description: '{{ doc("KDC22_02") }}'
+      - name: KDC23_01
+        description: '{{ doc("KDC23_01") }}'
+      - name: KDC23_02
+        description: '{{ doc("KDC23_02") }}'
+      - name: KDC24_01
+        description: '{{ doc("KDC24_01") }}'
+      - name: KDC24_02
+        description: '{{ doc("KDC24_02") }}'
+      - name: KDC25_01
+        description: '{{ doc("KDC25_01") }}'
+      - name: KDC25_02
+        description: '{{ doc("KDC25_02") }}'
+      - name: KDC26
+        description: '{{ doc("KDC26") }}'
+      - name: KDC27
+        description: '{{ doc("KDC27") }}'
+      - name: KDC28
+        description: '{{ doc("KDC28") }}'
+      - name: KDC29
+        description: '{{ doc("KDC29") }}'
+      - name: KDC30
+        description: '{{ doc("KDC30") }}'
+      - name: KDC31
+        description: '{{ doc("KDC31") }}'
+        tests:
+          - test_CL5
+      - name: KDC32
+        description: '{{ doc("KDC32") }}'
+        tests:
+          - test_CL1
+          - test_CL2:
+              cus_code: KDC01
+          - test_G1:
+              invalid_table_result : CRM_CORP_INVALID
+          - test_G3:
+              invalid_table_result : CRM_CORP_INVALID
+          - test_S124:
+              invalid_table_result : CRM_CORP_INVALID
+              cus_code: KDC01
+          - test_S125:
+              invalid_table_result : CRM_CORP_INVALID
+              cus_code: KDC01
+          - test_S224:
+              invalid_table_result : CRM_CORP_INVALID
+              cus_code: KDC01
+      - name: KDC33
+        description: '{{ doc("KDC33") }}'
+        tests:
+          - test_G1:
+              invalid_table_result : CRM_CORP_INVALID
+          - test_S229:
+              invalid_table_result : CRM_CORP_INVALID
+              cus_code: KDC01
+          - test_S36:
+              invalid_table_result : CRM_CORP_INVALID
+              cus_code: KDC01
+      - name: KDC01_CDT
+        description: '{{ doc("KDC01_CDT") }}'
+      - name: KDC34_CDT
+        description: '{{ doc("KDC34_CDT") }}'
+      - name: KDC02_CDT
+        description: '{{ doc("KDC02_CDT") }}'
+      - name: KDC03_CDT
+        description: '{{ doc("KDC03_CDT") }}'
+      - name: KDC04_CDT
+        description: '{{ doc("KDC04_CDT") }}'
+      - name: KDC05_01_CDT
+        description: '{{ doc("KDC05_01_CDT") }}'
+      - name: KDC35_01_CDT
+        description: '{{ doc("KDC35_01_CDT") }}'
+      - name: KDC05_02_CDT
+        description: '{{ doc("KDC05_02_CDT") }}'
+      - name: KDC35_02_CDT
+        description: '{{ doc("KDC35_02_CDT") }}'
+      - name: KDC05_03_CDT
+        description: '{{ doc("KDC05_03_CDT") }}'
+      - name: KDC35_03_CDT
+        description: '{{ doc("KDC35_03_CDT") }}'
+      - name: KDC06_CDT
+        description: '{{ doc("KDC06_CDT") }}'
+      - name: KDC07_CDT
+        description: '{{ doc("KDC07_CDT") }}'
+      - name: KDC08_CDT
+        description: '{{ doc("KDC08_CDT") }}'
+      - name: KDC09_CDT
+        description: '{{ doc("KDC09_CDT") }}'
+      - name: KDC37_CDT
+        description: '{{ doc("KDC37_CDT") }}'
+      - name: KDC10_CDT
+        description: '{{ doc("KDC10_CDT") }}'
+      - name: KDC11_CDT
+        description: '{{ doc("KDC11_CDT") }}'
+      - name: KDC11_01_CDT
+        description: '{{ doc("KDC11_01_CDT") }}'
+      - name: KDC11_02_CDT
+        description: '{{ doc("KDC11_02_CDT") }}'
+      - name: KDC11_03_CDT
+        description: '{{ doc("KDC11_03_CDT") }}'
+      - name: KDC11_04_CDT
+        description: '{{ doc("KDC11_04_CDT") }}'
+      - name: KDC11_05_CDT
+        description: '{{ doc("KDC11_05_CDT") }}'
+      - name: KDC12_CDT
+        description: '{{ doc("KDC12_CDT") }}'
+      - name: KDC13_CDT
+        description: '{{ doc("KDC13_CDT") }}'
+      - name: KDC14_01_CDT
+        description: '{{ doc("KDC14_01_CDT") }}'
+      - name: KDC14_02_CDT
+        description: '{{ doc("KDC14_02_CDT") }}'
+      - name: KDC14_03_CDT
+        description: '{{ doc("KDC14_03_CDT") }}'
+      - name: KDC14_04_CDT
+        description: '{{ doc("KDC14_04_CDT") }}'
+      - name: KDC14_05_CDT
+        description: '{{ doc("KDC14_05_CDT") }}'
+      - name: KDC15_01_CDT
+        description: '{{ doc("KDC15_01_CDT") }}'
+      - name: KDC15_02_CDT
+        description: '{{ doc("KDC15_02_CDT") }}'
+      - name: KDC15_03_CDT
+        description: '{{ doc("KDC15_03_CDT") }}'
+      - name: KDC15_04_CDT
+        description: '{{ doc("KDC15_04_CDT") }}'
+      - name: KDC15_05_CDT
+        description: '{{ doc("KDC15_05_CDT") }}'
+      - name: KDC16_01_CDT
+        description: '{{ doc("KDC16_01_CDT") }}'
+      - name: KDC36_01_CDT
+        description: '{{ doc("KDC36_01_CDT") }}'
+      - name: KDC16_02_CDT
+        description: '{{ doc("KDC16_02_CDT") }}'
+      - name: KDC36_02_CDT
+        description: '{{ doc("KDC36_02_CDT") }}'
+      - name: KDC16_03_CDT
+        description: '{{ doc("KDC16_03_CDT") }}'
+      - name: KDC36_03_CDT
+        description: '{{ doc("KDC36_03_CDT") }}'
+      - name: KDC17_CDT
+        description: '{{ doc("KDC17_CDT") }}'
+      - name: KDC18_CDT
+        description: '{{ doc("KDC18_CDT") }}'
+      - name: KDC19_CDT
+        description: '{{ doc("KDC19_CDT") }}'
+      - name: KDC20_CDT
+        description: '{{ doc("KDC20_CDT") }}'
+      - name: KDC21_CDT
+        description: '{{ doc("KDC21_CDT") }}'
+      - name: KDC22_01_CDT
+        description: '{{ doc("KDC22_01_CDT") }}'
+      - name: KDC22_02_CDT
+        description: '{{ doc("KDC22_02_CDT") }}'
+      - name: KDC23_01_CDT
+        description: '{{ doc("KDC23_01_CDT") }}'
+      - name: KDC23_02_CDT
+        description: '{{ doc("KDC23_02_CDT") }}'
+      - name: KDC24_01_CDT
+        description: '{{ doc("KDC24_01_CDT") }}'
+      - name: KDC24_02_CDT
+        description: '{{ doc("KDC24_02_CDT") }}'
+      - name: KDC25_01_CDT
+        description: '{{ doc("KDC25_01_CDT") }}'
+      - name: KDC25_02_CDT
+        description: '{{ doc("KDC25_02_CDT") }}'
+      - name: KDC26_CDT
+        description: '{{ doc("KDC26_CDT") }}'
+      - name: KDC27_CDT
+        description: '{{ doc("KDC27_CDT") }}'
+      - name: KDC28_CDT
+        description: '{{ doc("KDC28_CDT") }}'
+      - name: KDC29_CDT
+        description: '{{ doc("KDC29_CDT") }}'
+      - name: KDC30_CDT
+        description: '{{ doc("KDC30_CDT") }}'
+      - name: KDC31_CDT
+        description: '{{ doc("KDC31_CDT") }}'
+      - name: KDC32_CDT
+        description: '{{ doc("KDC32_CDT") }}'
+      - name: KDC33_CDT
+        description: '{{ doc("KDC33_CDT") }}'

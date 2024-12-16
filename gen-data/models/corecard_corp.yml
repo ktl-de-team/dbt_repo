@@ -1,0 +1,72 @@
+- name: CO_CORPORATE_ID
+  type: int
+  unique: True
+  min_value: 95000000
+  max_value: 95100000
+  
+- name: CO_COMPANY_NAME
+  type: name
+  unidecode: True
+  upper: True
+  
+- name: CB_CUSTOMER_CODE
+  type: int
+  relationships:
+    to: corebank_corp
+    field: CUS_CUSTOMER_CODE
+  null_rate: 0.1
+
+- name: CUS_ESTAB_CODE
+  type: string
+  null_rate: 1
+
+- name: CUS_ESTAB_CODE_ISS_AUTH
+  type: string
+  null_rate: 1
+  
+- name: CO_REGISTRATION_DATE
+  type: date
+  null_rate: 0.5
+  
+- name: CB_EMAIL
+  type: email
+  null_rate: 0.4
+  
+- name: CO_REG_ADD_LINE1
+  type: street_address
+  unidecode: True
+  upper: True
+
+- name: CB_ISS_AUTH
+  type: string
+  unidecode: True
+  null_rate: 1
+
+- name: CB_CUSTOMER_IDNO
+  type: string
+  regex_pattern: '0[0-9]{9}'
+  null_rate: 0.5
+  
+- name: CB_USER2_DATE_1
+  type: date
+  null_rate: 0.5
+
+- name: CB_RESIDENCY_CODE
+  type: category
+  elements: ['AL','DZ','AD','AO','AG','AR','AM','AU','AT','AZ','BS','BH','BD','BB','BY','BE','BZ','BJ','BT','BO','BA','BW','BR','BN','BG','BF','BI','CV','KH','CM','CA','CF','TD','CL','CN','CO','KM','CG','CR','CI','HR','CU','CY','CZ','DK','DJ','DM','DO','VN']
+  null_rate: 0.01
+
+- name: CB_MOBILE_NO
+  type: string
+  regex_pattern: '(0|\+84)[0-9]{9}'
+   
+- name: CUS_CREATION_DATE
+  type: date
+  start_year: 2000
+  end_year: 2024
+  
+- name: BRN_CODE
+  type: string
+  relationships:
+    to: corebank_branch
+    field: BR_CD

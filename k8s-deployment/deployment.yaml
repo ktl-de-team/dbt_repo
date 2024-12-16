@@ -1,0 +1,168 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: spark-jobs
+  name: dbt-project-demo
+  labels:
+    app: dbt-project-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dbt-project-demo
+  template:
+    metadata:
+      labels:
+        app: dbt-project-demo
+    spec:
+      serviceAccountName: spark
+      containers:
+      - name: dbt-project
+        image: 192.168.1.41/k8s-image/ktl-dbt-spark3.5:1.1.4
+        imagePullPolicy: Always
+        command:
+          - /bin/bash
+          - -c
+          - |-
+            ./entrypoint.sh
+            
+            echo $AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY > $HOME/.passwd-s3fs
+            chmod 600 $HOME/.passwd-s3fs
+            mkdir -p $S3FS_MOUNTPOINT
+            s3fs $AWS_BUCKET $S3FS_MOUNTPOINT -o passwd_file=$HOME/.passwd-s3fs -o url=$AWS_ENDPOINT,endpoint=$AWS_REGION,use_path_request_style,allow_other
+
+            # Get the maximum modification time of files tracked by Git
+            get_last_commit_time() {
+              original_dir=$(pwd)
+              cd "$GIT_SYNC_ROOT"/"$GIT_SYNC_DEST"
+              
+              last_commit_time="$(git log -1 --format=%cd)"
+
+              cd "$original_dir"
+              echo "$last_commit_time"
+            }
+
+            last_modification_time="0"
+
+            while true
+            do
+              if [ -d "$DBT_PROJECT_DIR" ]; then
+                current_modification_time="$(get_last_commit_time)"
+
+                if [ "$current_modification_time" != "$last_modification_time" ]; then
+                  last_modification_time="$current_modification_time"
+
+                  dbt deps --upgrade
+                  dbt parse
+                  dbt debug
+                  ktl-dbt compile
+                  dbt docs generate
+                  ktl-dbt docs generate --target-path /tmp/.dbt/docs
+                fi
+
+              else
+                echo "Project not clone yet. Waiting..."
+              fi
+
+              artifacts_mod_times="$(stat -c %Y "$DBT_TARGET_PATH"/run_results.json 2> /dev/null)"
+              if [ "$artifacts_mod_times" ]; then
+                # max_time=$(echo "$artifacts_mod_times" | sort -n | tail -1)
+                artifacts_mod_times=$(TZ=Asia/Ho_Chi_Minh date -d @$artifacts_mod_times +"%Y-%m-%d %H:%M:%S")
+
+                results_dir="$DBT_TARGET_PATH/artifacts_hist/$artifacts_mod_times"
+                if [ ! -d "$results_dir" ]; then
+                  mkdir -p "$results_dir"
+                  cp -r "$DBT_TARGET_PATH"/*.json "$results_dir"
+                fi
+              fi
+
+              sleep $GIT_SYNC_WAIT
+            done
+
+        envFrom:
+          - configMapRef:
+              name: dbt-project-demo-configmaps
+          - secretRef:
+              name: dbt-project-demo-secrets
+        env:
+          - name: MY_POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: MY_POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+
+        volumeMounts:
+          - name: git-volume
+            mountPath: /git
+          - name: docs-volume
+            mountPath: /tmp/.dbt/docs
+
+        securityContext:
+          runAsUser: 0
+          privileged: true
+          capabilities:
+            add:
+              - SYS_ADMIN
+
+      - name: dbt-docs-webserver
+        image: nginx:1.27.0-alpine3.19-slim
+        imagePullPolicy: Always
+        command:
+          - /bin/sh
+          - -c
+          - |-
+            echo "
+            server {
+                listen 8080;
+                server_name localhost;
+
+                location / {
+                    root /tmp/.dbt/docs;
+                    index index.html;
+                    try_files \$uri \$uri/ =404;
+                }
+            }
+            " > /etc/nginx/conf.d/default.conf
+
+            /docker-entrypoint.sh
+            nginx -g "daemon off;"
+
+        volumeMounts:
+          - name: docs-volume
+            mountPath: /tmp/.dbt/docs
+
+        ports:
+          - name: docs-webserver
+            containerPort: 8080
+            protocol: TCP
+
+      - name: git-sync
+        image: k8s.gcr.io/git-sync/git-sync:v3.6.5
+        imagePullPolicy: IfNotPresent
+        envFrom:
+          - configMapRef:
+              name: dbt-project-demo-configmaps
+          - secretRef:
+              name: dbt-project-demo-secrets
+
+        volumeMounts:
+          - name: git-volume
+            mountPath: /git
+
+        securityContext:
+          runAsUser: 0
+
+        resources:
+    
+      volumes:
+        - name: git-volume
+          emptyDir:
+            sizeLimit: 1G
+        - name: docs-volume
+          emptyDir:
+            sizeLimit: 1G
+
+      restartPolicy: Always

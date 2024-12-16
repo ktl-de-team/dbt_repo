@@ -1,0 +1,95 @@
+- name: CUS_CUSTOMER_CODE
+  type: int
+  unique: True
+  min_value: 90000000
+  max_value: 95000000
+  
+- name: CUS_NAME_1
+  type: name
+  unidecode: True
+  upper: True
+
+- name: CUS_ESTAB_CODE
+  type: string
+  regex_pattern: '0[0-9]{9}'
+  null_rate: 0.5
+
+- name: CUS_ESTAB_CODE_ISS_AUTH
+  type: category
+  unidecode: True
+  elements:
+    - Sở kế hoạch Đầu tư thành phố Hồ Chí Minh
+  null_rate: 0.5
+  
+- name: CUS_ESTAB_CODE_ISS_DATE
+  type: date
+  null_rate: 0.5
+  
+- name: CUS_EMAIL_1
+  type: email
+  null_rate: 0.4
+  
+- name: CUS_STREET
+  type: street_address
+  unidecode: True
+  upper: True
+  
+- name: CUS_TAX_ID
+  type: string
+  regex_pattern: '0[0-9]{9}'
+  null_rate: 0.5
+
+- name: CUS_TAX_ID_ISS_AUTH
+  type: category
+  unidecode: True
+  elements:
+    - Cục Thuế TP Hồ Chí Minh
+    - Chi cục Thuế Quận 1
+    - Chi cục Thuế Quận 2
+    - Chi cục Thuế Quận 3
+    - Chi cục Thuế Quận 4
+    - Chi cục Thuế Quận 5
+    - Chi cục Thuế Quận 6
+    - Chi cục Thuế khu vực Quận 7 – huyện Nhà Bè
+    - Chi cục Thuế Quận 8
+    - Chi cục Thuế Quận 9
+    - Chi cục Thuế Quận 10
+    - Chi cục Thuế Quận 11
+    - Chi cục Thuế Quận 12
+    - Chi cục Thuế Quận Gò Vấp
+    - Chi cục Thuế Quận Tân Bình
+    - Chi cục Thuế Quận Tân Phú
+    - Chi cục Thuế Quận Bình Thạnh
+    - Chi cục Thuế Quận Phú Nhuận
+    - Chi cục Thuế Quận Thủ Đức
+    - Chi cục Thuế Quận Bình Tân
+    - Chi cục Thuế huyện Củ Chi
+    - Chi cục Thuế huyện Hóc Môn
+    - Chi cục Thuế huyện Bình Chánh
+    - Chi cục Thuế huyện Cần Giờ
+  null_rate: 0.5
+  
+- name: CUS_TAX_ID_ISS_DATE
+  type: date
+  null_rate: 0.5
+
+- name: CUS_RESIDENCE
+  type: category
+  elements: ['AL','DZ','AD','AO','AG','AR','AM','AU','AT','AZ','BS','BH','BD','BB','BY','BE','BZ','BJ','BT','BO','BA','BW','BR','BN','BG','BF','BI','CV','KH','CM','CA','CF','TD','CL','CN','CO','KM','CG','CR','CI','HR','CU','CY','CZ','DK','DJ','DM','DO','VN']
+  null_rate: 0.01
+
+- name: CB_MOBILE_NO
+  type: string
+  regex_pattern: '(0|\+84)[0-9]{9}'
+   
+- name: CUS_CREATION_DATE
+  type: date
+  start_year: 2000
+  end_year: 2024
+  
+- name: BRN_CODE
+  type: string
+  relationships:
+    to: corebank_branch
+    field: BR_CD
+

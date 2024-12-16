@@ -1,0 +1,93 @@
+- name: CUS_CUSTOMER_CODE
+  type: int
+  unique: True
+  min_value: 1000
+  max_value: 20000000
+
+- name: CUS_NAME_1
+  type: name
+  unidecode: True
+  upper: True
+
+- name: CUS_GENDER
+  type: category
+  elements:
+    - MALE
+    - FEMALE
+
+- name: CUS_BIRTH_INCORP_DATE
+  type: date
+  start_year: 1950
+  end_year: 2024
+
+- name: CUS_NATIONALITY
+  type: category
+  elements: ['AL','DZ','AD','AO','AG','AR','AM','AU','AT','AZ','BS','BH','BD','BB','BY','BE','BZ','BJ','BT','BO','BA','BW','BR','BN','BG','BF','BI','CV','KH','CM','CA','CF','TD','CL','CN','CO','KM','CG','CR','CI','HR','CU','CY','CZ','DK','DJ','DM','DO','VN']
+  null_rate: 0.01
+
+- name: CUS_STREET
+  type: street_address
+  unidecode: True
+  upper: True
+
+- name: CUS_ADDRESS
+  type: address
+  unidecode: True
+  upper: True
+  null_rate: 0.9
+
+- name: CUS_MOBILE_NUMBER
+  type: string
+  regex_pattern: '(0|\+84)[0-9]{9}'
+  null_rate: 0.5
+
+- name: CUS_EMAIL_1
+  type: email
+  null_rate: 0.4
+
+- name: CUS_LEGAL_ID
+  type: string
+  regex_pattern: '0[0-9]{2}[0-9]{6}'
+  null_rate: 0.7
+
+- name: CUS_LEGAL_DOC_NAME
+  type: category
+  elements:
+    - NATIONAL.ID
+  null_rate: 0.7
+
+- name: CUS_LEGAL_ISS_DATE
+  type: date
+  null_rate: 0.7
+
+- name: CUS_LEGAL_ISS_AUTH
+  type: category
+  elements:
+    - CA HA NOI
+  null_rate: 0.7
+
+- name: CUS_POSITION
+  type: int
+  min_value: 1
+  max_value: 66
+
+- name: CUS_SECTOR
+  type: category
+  elements: [1000,1100,1101,1102,1200,1201,1202,1209,
+    1300,1301,1309,1400,1401,1402,1409,
+    1500,1501,1503,1504,1509,
+    1600,1601,1602,1700,1800,1900,2000,
+    8000,8001,8002,8003,8004,8005,8006,8007,8008,8009,
+    8010,8011,8012,8013,8014,8015,8016,8017
+    9000,9001,9100,9102,9109,9200,9201,9202]
+    
+- name: CUS_CREATION_DATE
+  type: date
+  start_year: 2000
+  end_year: 2024
+  
+- name: BRN_CODE
+  type: string
+  relationships:
+    to: corebank_branch
+    field: BR_CD

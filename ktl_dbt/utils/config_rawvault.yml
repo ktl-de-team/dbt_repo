@@ -1,0 +1,55 @@
+# config.yml
+paths:
+  base_config: "/home/dev/dbt/dbt-project-toantt/ktl_dbt/ktl_autovault_configs"
+  base_models: "/home/dev/dbt/dbt-project-toantt/ktl_dbt/models/integration_dp/raw_vault"
+  stream: "stream"  # Will be joined with base_models
+  batch: "batch" 
+
+templates:
+  hub: |
+    {%- set {{config_name}} = dv_config('{{config_name}}') -%}
+    {%- set dv_system = var("dv_system") -%}
+
+    {{ ktl_autovault.hub_transform(model={{config_name}}, dv_system=dv_system, include_ghost_record=true) }}
+
+  lnk: |
+    {%- set {{config_name}} = dv_config('{{config_name}}') -%}
+    {%- set dv_system = var("dv_system") -%}
+
+    {{ ktl_autovault.lnk_transform(model={{config_name}}, dv_system=dv_system) }}
+
+  sat_der: |
+    {%- set {{config_name}} = dv_config('{{config_name}}') -%}
+    {%- set dv_system = var("dv_system") -%}
+
+    {{ ktl_autovault.sat_der_transform(model={{config_name}}, dv_system=dv_system) }}
+
+  lsat_der: |
+    {%- set {{config_name}} = dv_config('{{config_name}}') -%}
+    {%- set dv_system = var("dv_system") -%}
+
+    {{ ktl_autovault.lsat_der_transform(model={{config_name}}, dv_system=dv_system) }}
+
+  sat_snp: |
+    {%- set {{config_name}} = dv_config('{{config_name}}') -%}
+    {%- set dv_system = var("dv_system") -%}
+
+    {{ ktl_autovault.sat_snp_transform(model={{config_name}}, dv_system=dv_system) }}
+
+  lsat_snp: |
+    {%- set {{config_name}} = dv_config('{{config_name}}') -%}
+    {%- set dv_system = var("dv_system") -%}
+
+    {{ ktl_autovault.lsat_snp_transform(model={{config_name}}, dv_system=dv_system) }}
+
+  sat: |
+    {%- set {{config_name}} = dv_config('{{config_name}}') -%}
+    {%- set dv_system = var("dv_system") -%}
+
+    {{ ktl_autovault.sat_transform(model={{config_name}}, dv_system=dv_system) }}
+
+  lsat: |
+    {%- set {{config_name}} = dv_config('{{config_name}}') -%}
+    {%- set dv_system = var("dv_system") -%}
+
+    {{ ktl_autovault.lsat_transform(model={{config_name}}, dv_system=dv_system) }}

@@ -1,0 +1,14 @@
+
+python-gitlab
+sqlfluff==3.0.7
+pyspark==3.5.1
+graphviz
+
+dbt-core==1.7.13
+dbt-spark[session]==1.7.1
+dbt-dremio==1.7.0
+ktl-dbt@git+http://pip:gJFSz2wPYjw-JyFgGUJx@14.241.249.100:7979/de-team/ktl-dbt.git@v1.1.4
+elementary-data==0.15.1
+dbt-oracle==1.7.6
+# pip install --no-cache-dir --use-feature=2020-resolver -r requirements.txt
+# python3 -c 'import site; print(site.getsitepackages())'
